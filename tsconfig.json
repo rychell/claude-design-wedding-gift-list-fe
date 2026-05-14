@@ -1,0 +1,3 @@
+{
+  "extends": "@claude-design-wedding-gift-list-fe/config/tsconfig.base.json"
+}
