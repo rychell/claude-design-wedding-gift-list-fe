@@ -1,0 +1,74 @@
+[
+  {
+    "id": "jantar",
+    "title": "Jantar romântico",
+    "desc": "Uma noite só nossa, com vinho e vista pro mar de Jericoacoara.",
+    "price": 300,
+    "category": "Lua de mel",
+    "badge": "Mais escolhido"
+  },
+  {
+    "id": "cafe",
+    "title": "Café da manhã na cama",
+    "desc": "O primeiro café da manhã como casados — preguiçoso, doce, devagar.",
+    "price": 80,
+    "category": "Lua de mel"
+  },
+  {
+    "id": "passeio",
+    "title": "Passeio de buggy",
+    "desc": "Dunas, lagoas e o vento despenteando os votos.",
+    "price": 220,
+    "category": "Lua de mel"
+  },
+  {
+    "id": "massagem",
+    "title": "Massagem a dois",
+    "desc": "Relaxar depois de meses de planilhas e provas de bolo.",
+    "price": 450,
+    "category": "Lua de mel"
+  },
+  {
+    "id": "champanhe",
+    "title": "Brinde de champanhe",
+    "desc": "Pra abrir na primeira noite da viagem.",
+    "price": 180,
+    "category": "Lua de mel",
+    "badge": "Favorito do noivo"
+  },
+  {
+    "id": "panelas",
+    "title": "Jogo de panelas",
+    "desc": "Pra inaugurar a cozinha e os jantares de domingo.",
+    "price": 600,
+    "category": "Casa nova"
+  },
+  {
+    "id": "jogo-cama",
+    "title": "Jogo de cama de linho",
+    "desc": "O ninho onde a vida em comum começa de verdade.",
+    "price": 350,
+    "category": "Casa nova"
+  },
+  {
+    "id": "plantas",
+    "title": "Plantas pra varanda",
+    "desc": "Costela-de-adão, samambaia e uma jiboia teimosa.",
+    "price": 120,
+    "category": "Casa nova"
+  },
+  {
+    "id": "livros",
+    "title": "Livros pra estante",
+    "desc": "Pra ler em voz alta nas tardes de domingo.",
+    "price": 90,
+    "category": "Casa nova"
+  },
+  {
+    "id": "cinema",
+    "title": "Sessão de cinema",
+    "desc": "Pipoca, refrigerante e um filme que a gente nem precisa concordar.",
+    "price": 60,
+    "category": "Pra nós"
+  }
+]

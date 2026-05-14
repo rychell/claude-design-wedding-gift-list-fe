@@ -117,6 +117,21 @@
   --radius-4xl: calc(var(--radius) + 16px);
 }
 
+/* Wedding palette — Bege & Dourado */
+:root {
+  --w-bg: #F7F2EA;
+  --w-surface: #FBF7F0;
+  --w-card: #FFFFFF;
+  --w-ink: #2A2520;
+  --w-ink-soft: #7A6E5F;
+  --w-ink-muted: #A89B89;
+  --w-accent: #B89968;
+  --w-accent-deep: #8B7448;
+  --w-line: rgba(42, 37, 32, 0.10);
+  --w-placeholder: #E8DFCF;
+  --w-placeholder-stripe: #DCCFB7;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

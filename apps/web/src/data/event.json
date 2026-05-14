@@ -1,0 +1,60 @@
+{
+  "coupleNames": {
+    "person1": "Mayara",
+    "person2": "Rychell"
+  },
+  "date": "2026-06-21",
+  "dayOfWeek": "DOM",
+  "timeOfDay": "FOR",
+  "ceremony": {
+    "time": "16h00",
+    "caption": "Cerimônia · jardim externo"
+  },
+  "venue": {
+    "name": "Buffet Casa Maraponga",
+    "city": "Fortaleza",
+    "state": "CE",
+    "address": "R. Paurilo Barroso, 521, Jardim Cearense",
+    "mapsUrl": "https://maps.app.goo.gl/kD7ehfxWtxBS9Z7dA"
+  },
+  "reception": {
+    "time": "A partir das 16h",
+    "caption": "No mesmo endereço"
+  },
+  "dressCode": {
+    "label": "Esporte fino",
+    "caption": "Tons claros são bem-vindos"
+  },
+  "pix": {
+    "key": "85988579650",
+    "keyType": "Celular",
+    "holderName": "Rychell Moreira Sousa"
+  },
+  "footerQuote": "A gente vai te esperar no fim daquele corredor de flores.",
+  "timeline": [
+    {
+      "year": "2019",
+      "month": "agosto",
+      "title": "Onde tudo começou",
+      "body": "[texto aqui — como vocês se conheceram]"
+    },
+    {
+      "year": "2020",
+      "month": "fevereiro",
+      "title": "O primeiro sim",
+      "body": "[texto aqui — o primeiro encontro, a primeira viagem…]"
+    },
+    {
+      "year": "2023",
+      "month": "dezembro",
+      "title": "O pedido",
+      "body": "[texto aqui — onde foi, como foi]"
+    },
+    {
+      "year": "2026",
+      "month": "junho",
+      "title": "O grande dia",
+      "body": "[texto aqui — convite final]"
+    }
+  ]
+}

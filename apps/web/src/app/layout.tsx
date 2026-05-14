@@ -1,23 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 
 import "../index.css";
-import Header from "@/components/header";
-import Providers from "@/components/providers";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-display",
   subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  style: ["normal", "italic"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const manrope = Manrope({
+  variable: "--font-body",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
-  title: "claude-design-wedding-gift-list-fe",
-  description: "claude-design-wedding-gift-list-fe",
+  title: "Mayara & Rychell — Lista de casamento",
+  description: "Lista de presentes do casamento de Mayara e Rychell",
 };
 
 export default function RootLayout({
@@ -26,14 +27,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Providers>
-          <div className="grid grid-rows-[auto_1fr] h-svh">
-            <Header />
-            {children}
-          </div>
-        </Providers>
+    <html lang="pt-BR">
+      <body
+        className={`${cormorant.variable} ${manrope.variable} antialiased`}
+        style={{ background: "#F7F2EA", margin: 0 }}
+      >
+        <div
+          style={{
+            maxWidth: 390,
+            margin: "0 auto",
+            minHeight: "100dvh",
+            background: "#F7F2EA",
+            position: "relative",
+            overflowX: "hidden",
+          }}
+        >
+          {children}
+        </div>
       </body>
     </html>
   );
