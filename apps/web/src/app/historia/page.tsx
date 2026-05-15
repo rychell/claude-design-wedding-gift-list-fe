@@ -23,7 +23,7 @@ export default function HistoriaPage() {
         <div style={{ marginTop: 22 }}>
           <CapsLine size={10} color={P.accent}>Nossa história</CapsLine>
           <h1 style={{ fontFamily: FONTS.display, fontWeight: 400, fontSize: 36, color: P.ink, lineHeight: 1.05, margin: "8px 0 6px" }}>
-            Sete <em style={{ fontStyle: "italic", color: P.accent, fontWeight: 300 }}>anos</em> em quatro<br />capítulos.
+            Quarto <em style={{ fontStyle: "italic", color: P.accent, fontWeight: 300 }}>anos</em> em quatro<br />capítulos.
           </h1>
         </div>
       </div>
