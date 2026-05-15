@@ -40,7 +40,7 @@ export default function DetalhePage({ params }: { params: Promise<{ id: string }
             onError={() => setImgError(true)}
           />
         )}
-        <div style={{ position: "absolute", top: 60, left: 20 }}>
+        <div style={{ position: "absolute", top: 24, left: 20 }}>
           <Link href="/lista">
             <BackButton />
           </Link>

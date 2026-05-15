@@ -27,9 +27,9 @@ export default function ObrigadoPage({
   return (
     <div style={{
       position: "relative", minHeight: "100dvh",
-      padding: "70px 28px 34px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center",
+      padding: "24px 28px 34px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center",
     }}>
-      <div style={{ marginTop: 30 }}>
+      <div style={{ marginTop: 8 }}>
         <Botanical size={70} color={P.accent} opacity={0.7} />
       </div>
       <CapsLine size={11} color={P.accent} style={{ marginTop: 20 }}>De coração</CapsLine>

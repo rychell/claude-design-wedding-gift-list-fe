@@ -63,7 +63,7 @@ export default function SurpresaPagamentoPage({
       background: P.bg,
     }}>
       {/* Header */}
-      <div style={{ padding: "60px 20px 0" }}>
+      <div style={{ padding: "24px 20px 0" }}>
         <Link href={`/surpresa/confirmar?valor=${amount}&nome=${encodeURIComponent(contributor)}`}>
           <BackButton />
         </Link>

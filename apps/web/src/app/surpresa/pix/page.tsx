@@ -67,16 +67,16 @@ export default function SurpresaPixPage({
       background: P.bg,
     }}>
       {/* Header */}
-      <div style={{ padding: "60px 20px 0" }}>
+      <div style={{ padding: "24px 20px 0" }}>
         <Link href={`/surpresa/pagamento?valor=${amount}&nome=${encodeURIComponent(contributor)}`}>
           <BackButton />
         </Link>
       </div>
 
-      <div style={{ padding: "28px 24px 0", flex: 1, display: "flex", flexDirection: "column" }}>
+      <div style={{ padding: "20px 24px 0", flex: 1, display: "flex", flexDirection: "column" }}>
 
         {/* Title */}
-        <div style={{ marginBottom: 26 }}>
+        <div style={{ marginBottom: 18 }}>
           <CapsLine size={10} color={P.accent} style={{ marginBottom: 8 }}>Pagar com PIX</CapsLine>
           <h1 style={{
             fontFamily: FONTS.display, fontWeight: 400, fontSize: 30,
@@ -115,12 +115,12 @@ export default function SurpresaPixPage({
         <div style={{
           borderRadius: 20, background: P.surface,
           border: `1px solid ${P.line}`,
-          padding: "28px 24px",
+          padding: "18px 20px",
           display: "flex", flexDirection: "column", alignItems: "center",
         }}>
-          <PixDiamondIcon size={44} color={P.accent} />
+          <PixDiamondIcon size={36} color={P.accent} />
 
-          <GoldRule color={P.accent} width={40} style={{ marginTop: 18, marginBottom: 18 }} />
+          <GoldRule color={P.accent} width={40} style={{ marginTop: 12, marginBottom: 12 }} />
 
           <div style={{ fontFamily: FONTS.body, fontSize: 11, color: P.inkMuted, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 4 }}>
             {pix.keyType}
@@ -155,7 +155,7 @@ export default function SurpresaPixPage({
         </div>
 
         {/* Instructions */}
-        <div style={{ marginTop: 18, padding: "14px 16px", borderRadius: 12, background: `${P.accent}0C`, border: `1px solid ${P.accent}20` }}>
+        <div style={{ marginTop: 12, padding: "14px 16px", borderRadius: 12, background: `${P.accent}0C`, border: `1px solid ${P.accent}20` }}>
           <div style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
             <div style={{ marginTop: 2, flexShrink: 0 }}><Sprig size={12} color={P.accent} /></div>
             <p style={{ fontFamily: FONTS.body, fontSize: 12.5, color: P.inkSoft, margin: 0, lineHeight: 1.6 }}>

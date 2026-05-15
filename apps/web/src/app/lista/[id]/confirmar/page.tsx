@@ -30,7 +30,7 @@ export default function ConfirmarPage({
       {/* dimmed list behind */}
       <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
         <div style={{ filter: "blur(2px)", opacity: 0.7 }}>
-          <div style={{ width: "100%", padding: "64px 24px 0", background: P.bg }}>
+          <div style={{ width: "100%", padding: "24px 24px 0", background: P.bg }}>
             <div style={{ fontFamily: FONTS.display, fontSize: 10, letterSpacing: "0.28em", textTransform: "uppercase", color: P.accent }}>
               Lista de presentes
             </div>

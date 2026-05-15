@@ -45,7 +45,7 @@ export default function EventoPage() {
       {/* hero */}
       <div style={{ position: "relative" }}>
         <ImagePlaceholder height={300} label="local do evento" />
-        <div style={{ position: "absolute", top: 60, left: 20 }}>
+        <div style={{ position: "absolute", top: 24, left: 20 }}>
           <Link href="/">
             <div style={{
               width: 38, height: 38, borderRadius: 999, background: "rgba(255,255,255,0.85)",
