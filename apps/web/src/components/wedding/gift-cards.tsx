@@ -12,11 +12,13 @@ function GiftImage({
   height,
   width,
   radius = 0,
+  priority = false,
 }: {
   id: string;
   height: number;
   width?: number;
   radius?: number;
+  priority?: boolean;
 }) {
   const [error, setError] = useState(false);
 
@@ -41,6 +43,8 @@ function GiftImage({
         fill
         sizes="(max-width: 600px) 50vw, 300px"
         style={{ objectFit: "cover" }}
+        loading={priority ? "eager" : "lazy"}
+        priority={priority}
         onError={() => setError(true)}
       />
     </div>
@@ -169,7 +173,7 @@ export function GiftsGrid({ gifts }: { gifts: Gift[] }) {
       <div style={{ gridColumn: "1 / -1" }}>
         <SurpreendaCard />
       </div>
-      {items.map((g) => (
+      {items.map((g, i) => (
         <Link key={g.id} href={`/lista/${g.id}`} style={{ textDecoration: "none" }}>
           <div
             style={{
@@ -181,7 +185,7 @@ export function GiftsGrid({ gifts }: { gifts: Gift[] }) {
             }}
           >
             <div style={{ position: "relative" }}>
-              <GiftImage id={g.id} height={120} radius={10} />
+              <GiftImage id={g.id} height={120} radius={10} priority={i < 2} />
               {g.badge && (
                 <div
                   style={{
@@ -246,7 +250,7 @@ export function GiftsList({ gifts }: { gifts: Gift[] }) {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
       <SurpreendaCard />
-      {items.map((g) => (
+      {items.map((g, i) => (
         <Link key={g.id} href={`/lista/${g.id}`} style={{ textDecoration: "none" }}>
           <div
             style={{
@@ -259,7 +263,7 @@ export function GiftsList({ gifts }: { gifts: Gift[] }) {
               alignItems: "center",
             }}
           >
-            <GiftImage id={g.id} width={86} height={86} radius={8} />
+            <GiftImage id={g.id} width={86} height={86} radius={8} priority={i === 0} />
             <div style={{ flex: 1, minWidth: 0 }}>
               {g.badge && (
                 <div
@@ -327,7 +331,7 @@ export function GiftsEditorial({ gifts }: { gifts: Gift[] }) {
       {items.map((g, i) => (
         <Link key={g.id} href={`/lista/${g.id}`} style={{ textDecoration: "none" }}>
           <div>
-            <GiftImage id={g.id} height={210} radius={14} />
+            <GiftImage id={g.id} height={210} radius={14} priority={i === 0} />
             <div
               style={{
                 display: "flex",

@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { P, FONTS, GoldRule, CapsLine, ButtonPrimary } from "@/components/wedding/primitives";
-import { ImagePlaceholder } from "@/components/wedding/image-placeholder";
 import eventData from "@/data/event.json";
 
 function getCountdown(dateStr: string): string {
@@ -31,19 +31,19 @@ export default function Home() {
   const year = dateParts.getFullYear();
 
   return (
-    <div style={{ position: "relative", minHeight: "100dvh", padding: "70px 28px 34px", display: "flex", flexDirection: "column" }}>
+    <div style={{ position: "relative", height: "100dvh", padding: "24px 28px 24px", display: "flex", flexDirection: "column" }}>
       {/* top tag */}
-      <div style={{ marginTop: 18, display: "flex", flexDirection: "column", alignItems: "center", gap: 14 }}>
+      <div style={{ marginTop: 10, display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
         <CapsLine size={11} color={P.inkSoft}>Casamento</CapsLine>
         <GoldRule color={P.accent} width={18} />
       </div>
 
       {/* names */}
-      <div style={{ marginTop: 36, textAlign: "center" }}>
+      <div style={{ marginTop: 22, textAlign: "center" }}>
         <div style={{ fontFamily: FONTS.display, fontSize: 56, fontWeight: 400, color: P.ink, lineHeight: 1.02, letterSpacing: "-0.01em" }}>
           {person1}
         </div>
-        <div style={{ fontFamily: FONTS.display, fontStyle: "italic", fontSize: 28, fontWeight: 300, color: P.accent, margin: "4px 0" }}>
+        <div style={{ fontFamily: FONTS.display, fontStyle: "italic", fontSize: 28, fontWeight: 300, color: P.accent, margin: "2px 0" }}>
           &amp;
         </div>
         <div style={{ fontFamily: FONTS.display, fontSize: 56, fontWeight: 400, color: P.ink, lineHeight: 1.02, letterSpacing: "-0.01em" }}>
@@ -51,13 +51,22 @@ export default function Home() {
         </div>
       </div>
 
-      {/* photo placeholder, oval */}
-      <div style={{ marginTop: 28, display: "flex", justifyContent: "center" }}>
-        <ImagePlaceholder width={210} height={260} radius={130} label="foto do casal" />
+      {/* photo — flex: 1 so it absorbs available space and button always stays visible */}
+      <div style={{ flex: 1, marginTop: 16, display: "flex", justifyContent: "center", alignItems: "center", minHeight: 100, maxHeight: 280, overflow: "hidden" }}>
+        <div style={{ position: "relative", width: 210, height: "100%", borderRadius: 105, overflow: "hidden" }}>
+          <Image
+            src="/images/casal-home.png"
+            alt="Rychell e Mayara"
+            fill
+            sizes="210px"
+            style={{ objectFit: "cover", objectPosition: "center top" }}
+            priority
+          />
+        </div>
       </div>
 
       {/* date */}
-      <div style={{ marginTop: 30, textAlign: "center" }}>
+      <div style={{ marginTop: 18, textAlign: "center" }}>
         <div style={{ display: "flex", justifyContent: "center", alignItems: "baseline", gap: 14, fontFamily: FONTS.display, color: P.ink }}>
           <span style={{ fontSize: 13, letterSpacing: "0.32em", color: P.inkSoft }}>{eventData.dayOfWeek}</span>
           <span style={{ width: 1, height: 22, background: P.line, display: "inline-block" }} />
@@ -70,9 +79,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* spacer + CTAs */}
-      <div style={{ flex: 1 }} />
-      <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+      {/* CTAs */}
+      <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 10 }}>
         <Link href="/lista" style={{ textDecoration: "none" }}>
           <ButtonPrimary>Ver lista de presentes</ButtonPrimary>
         </Link>

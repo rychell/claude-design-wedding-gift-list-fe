@@ -11,7 +11,7 @@ export function ImagePlaceholder({
   style = {},
 }: {
   width?: number | string;
-  height?: number;
+  height?: number | string;
   label?: string;
   radius?: number;
   style?: CSSProperties;
