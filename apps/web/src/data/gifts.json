@@ -1,74 +1,812 @@
 [
   {
-    "id": "jantar",
-    "title": "Jantar romântico",
-    "desc": "Uma noite só nossa, com vinho e vista pro mar de Jericoacoara.",
-    "price": 300,
-    "category": "Lua de mel",
-    "badge": "Mais escolhido"
+    "id": "varal-luzes-jardim",
+    "title": "Varal de Luzes para o Jardim",
+    "desc": "O sonho virou realidade. Aquelas luzes de quermesse que vocês sempre falaram estão aqui. Agora só faltam as cadeiras de vime e um bom forró.",
+    "price": 280,
+    "category": "Casa & Jardim",
+    "badge": "Top escolha",
+    "imagePrompt": "Overhead hero shot of warm Edison string lights strung dramatically across a lush backyard garden at dusk, the lights glowing golden and commanding the entire composition against a deep blue evening sky, tropical plants and a barbecue area softly lit below, Brazilian summer atmosphere, lifestyle editorial photography"
   },
   {
-    "id": "cafe",
-    "title": "Café da manhã na cama",
-    "desc": "O primeiro café da manhã como casados — preguiçoso, doce, devagar.",
-    "price": 80,
-    "category": "Lua de mel"
+    "id": "guardaroupa-novo",
+    "title": "Guarda-Roupa Novo",
+    "desc": "Ele resistiu bravamente. Foram anos de serviço leal. Mas chegou a hora. R.I.P. ao guarda-roupa histórico da casa. Que este seja mais duradouro.",
+    "price": 1800,
+    "category": "Casa & Jardim",
+    "imagePrompt": "Hero product shot of a large modern wardrobe with mirrored sliding doors open wide, revealing a perfectly organized interior with clothes hung neatly, the wardrobe commanding the full visual frame in a bright coastal bedroom, natural light flooding in, plants in soft focus, interior design editorial photography"
   },
   {
-    "id": "passeio",
-    "title": "Passeio de buggy",
-    "desc": "Dunas, lagoas e o vento despenteando os votos.",
+    "id": "sofa-home-office",
+    "title": "Sofá para Home Office",
+    "desc": "O Rychell pediu. O Rychell merece. Um cantinho confortável no quarto-escritório para aquelas pausas estratégicas entre um deploy e outro.",
+    "price": 1200,
+    "category": "Casa & Jardim",
+    "badge": "Pedido especial",
+    "imagePrompt": "A compact two-seat sofa as the absolute visual hero of a cozy home office corner — Rychell's perfect retreat between deploys — warm indirect lighting, an open laptop resting on the cushion, a coffee cup on the armrest, bookshelves and plants framing the scene in soft focus, editorial lifestyle photography"
+  },
+  {
+    "id": "kit-jardinagem",
+    "title": "Kit Completo de Jardinagem",
+    "desc": "Para os mestres das plantas que já transformaram a casa num jardim. Com esse kit, o jardim iluminado dos sonhos fica ainda mais próximo.",
     "price": 220,
-    "category": "Lua de mel"
+    "category": "Casa & Jardim",
+    "imagePrompt": "Hero flat-lay of a complete premium gardening tool set — trowel, shears, gloves, spray bottle, plant labels — arranged meticulously on dark soil with tropical leaf accents, a monstera cutting beside the tools as a natural prop, natural side lighting creating rich texture and depth, lifestyle garden editorial photography"
   },
   {
-    "id": "massagem",
-    "title": "Massagem a dois",
-    "desc": "Relaxar depois de meses de planilhas e provas de bolo.",
+    "id": "mudas-plantas-tropicais",
+    "title": "Coleção de Mudas Tropicais",
+    "desc": "A casa já tem plantas, mas sempre tem espaço pra mais. Afinal, cada planta tem uma personalidade e a Mayara conhece todas pelo nome.",
+    "price": 150,
+    "category": "Casa & Jardim",
+    "imagePrompt": "Hero display of a lush tropical houseplant collection — monstera, pothos, bird of paradise, alocasia — each in individual terracotta pots with small handwritten name tags in Mayara's handwriting, arranged on wooden shelves in a bright boho-coastal home, soft natural window light, the plants as the undeniable stars"
+  },
+  {
+    "id": "luminaria-indireta-sala",
+    "title": "Luminária de Iluminação Indireta",
+    "desc": "Porque a casa merece aquela luz que faz tudo parecer mais bonito. Combinada com o varal do jardim, a vibe fica perfeita.",
+    "price": 380,
+    "category": "Casa & Jardim",
+    "imagePrompt": "A sculptural floor lamp casting warm amber indirect light as the absolute hero of the composition — the glowing light cone and soft halo dominating center frame, shadows playing gently on white walls, bookshelves and tropical plants barely visible in the warm ambiance beyond, intimate interior editorial photography"
+  },
+  {
+    "id": "kit-churrasco-premium",
+    "title": "Kit Churrasco Premium",
+    "desc": "A churrasqueira já está lá, esperando. Chegou a hora de equipá-la como merece. Fins de semana com churrasco e boa companhia são garantidos.",
     "price": 450,
-    "category": "Lua de mel"
+    "category": "Casa & Jardim",
+    "badge": "Mais querido",
+    "imagePrompt": "Hero flat-lay of a complete premium BBQ tool set — gleaming tongs, skewers, spatula, brush and thermometer — arranged dramatically on a rustic stone grill surface with charcoal glow beneath, wisps of smoke rising, the tools commanding the center frame in sharp focus, backyard garden setting visible behind, lifestyle editorial photography"
   },
   {
-    "id": "champanhe",
-    "title": "Brinde de champanhe",
-    "desc": "Pra abrir na primeira noite da viagem.",
+    "id": "telas-tintas-mayara",
+    "title": "Kit Telas e Tintas para o Ateliê",
+    "desc": "O quarto da bagunça tem data marcada pra virar ateliê. Enquanto a reforma não vem, a Mayara já começa a criar. Arte não espera.",
+    "price": 320,
+    "category": "Casa & Jardim",
+    "imagePrompt": "Hero shot of artist canvas panels and professional acrylic paint tubes fanned open dramatically, paint-covered brushes and palette knife arranged with intention on Mayara's future atelier table — the pigment textures and canvas texture in sharp detail, warm natural studio window light raking across the scene, art lifestyle editorial photography"
+  },
+  {
+    "id": "cavalete-pintura",
+    "title": "Cavalete de Pintura Profissional",
+    "desc": "Todo ateliê tem um cavalete. E o futuro ateliê da Mayara não pode ser diferente. Compra hoje, usa amanhã, expõe nas paredes depois.",
+    "price": 480,
+    "category": "Casa & Jardim",
+    "imagePrompt": "A beautiful solid wood artist easel standing tall as the dominant visual hero in a sunlit white room — Mayara's future creative sanctuary — a fresh canvas already mounted, a jar of brushes beside it at the base, tropical plants framing the edges, the easel commanding the full center frame, art studio lifestyle editorial photography"
+  },
+  {
+    "id": "prateleiras-livros",
+    "title": "Prateleiras Flutuantes para Livros",
+    "desc": "Porque os livros precisam de um lar à altura. Organizar uma biblioteca em casa é um ato de amor — e de praticidade.",
+    "price": 290,
+    "category": "Casa & Jardim",
+    "imagePrompt": "Hero shot of minimalist floating wooden shelves spanning the full frame width on a white wall, filled with books organized by color and small decorative objects, a trailing pothos draping elegantly over one shelf, warm afternoon light casting gentle shadows — the shelves as the complete visual centerpiece, coastal interior editorial photography"
+  },
+  {
+    "id": "rede-jardim",
+    "title": "Rede de Descanso para o Jardim",
+    "desc": "Porque depois de fazer crossfit, reformar a casa, regar as plantas e tentar tocar ukulele, a gente merece descansar. Com gramado na frente e varal de luzes acima.",
     "price": 180,
-    "category": "Lua de mel",
-    "badge": "Favorito do noivo"
+    "category": "Casa & Jardim",
+    "imagePrompt": "A hammock as the absolute visual hero — strung taut between two palms in Rychell and Mayara's lush tropical backyard, the string lights of the garden glowing softly above, the hammock fabric filling center frame with warm afternoon light and dappled leaf shadows playing across it, lifestyle garden editorial photography"
   },
   {
-    "id": "panelas",
-    "title": "Jogo de panelas",
-    "desc": "Pra inaugurar a cozinha e os jantares de domingo.",
-    "price": 600,
-    "category": "Casa nova"
+    "id": "tapete-sala",
+    "title": "Tapete Artesanal para a Sala",
+    "desc": "Um tapete que une o estilo praiano com o aconchego de casa. Andar descalço em cima dele vai ser o primeiro programa depois do casamento.",
+    "price": 420,
+    "category": "Casa & Jardim",
+    "imagePrompt": "Close-up hero shot of a handmade boho-coastal woven rug with geometric patterns in earthy sand, terracotta and cream tones — the craftsmanship and texture filling the entire frame in sharp detail, a bare foot at one edge suggesting human warmth, a potted tropical plant in soft background, coastal interior lifestyle photography"
   },
   {
-    "id": "jogo-cama",
-    "title": "Jogo de cama de linho",
-    "desc": "O ninho onde a vida em comum começa de verdade.",
+    "id": "decoracao-parede-praia",
+    "title": "Quadros Decorativos Estilo Praia",
+    "desc": "Para quem ama praia mas não pode ir todos os dias. Com esses quadros, a vibe oceânica fica permanente na sala.",
+    "price": 240,
+    "category": "Casa & Jardim",
+    "imagePrompt": "Hero gallery arrangement of coastal-themed wall art prints in driftwood frames — ocean waves, seabirds, palm silhouettes — mounted on a bright white wall as the dominant compositional centerpiece, warm side lighting creating depth on the frames, coastal furniture just visible below in soft focus, editorial interior photography"
+  },
+  {
+    "id": "aparelho-jantar",
+    "title": "Aparelho de Jantar Completo",
+    "desc": "Para receber amigos, fazer jantar a dois, ou simplesmente comer bem. 12 peças pra começar bem a vida em comum.",
+    "price": 550,
+    "category": "Casa & Jardim",
+    "imagePrompt": "Hero product display of a 12-piece ceramic dinnerware set in warm earth tones — plates, bowls and cups stacked artistically with one complete place setting laid out for two beside them, the ceramics as the tactile visual star of a wooden dining table, soft editorial side lighting revealing the texture, lifestyle photography"
+  },
+  {
+    "id": "kit-ferramentas-diy",
+    "title": "Kit de Ferramentas DIY Completo",
+    "desc": "O casal mais habilidoso em reformas que existe. Com esse kit, nem a parede do quarto da bagunça vai sobrar. Cuidado, vizinhos.",
+    "price": 680,
+    "category": "Casa & Jardim",
+    "imagePrompt": "Hero flat-lay of a complete DIY toolkit — hammer, power drill, screwdrivers, level, measuring tape, pliers — arranged in perfect radiating order on a clean workbench, a hand-drawn home renovation blueprint beside them suggesting Rychell and Mayara's next project, warm workshop lighting, editorial lifestyle photography"
+  },
+  {
+    "id": "jogo-cama-linho",
+    "title": "Jogo de Cama de Linho Premium",
+    "desc": "Porque dormir bem é fundamental. Especialmente depois de crossfit, um dia na praia ou uma reforma de fim de semana.",
+    "price": 480,
+    "category": "Casa & Jardim",
+    "imagePrompt": "Hero close-up of premium natural linen bedding — crisp white and beige sheets and pillowcases piled luxuriously in center frame, the fabric texture in exquisite tactile detail, a bright coastal bedroom softly out of focus behind, morning light washing over the linen making it glow, the bedding as the undeniable star, editorial photography"
+  },
+  {
+    "id": "vaso-grande-planta",
+    "title": "Vaso Grande para Planta de Interior",
+    "desc": "A casa tem plantas, mas falta aquela planta de canto — dramática e majestosa. Esse vaso é pra ela. A planta você escolhe com carinho.",
+    "price": 160,
+    "category": "Casa & Jardim",
+    "imagePrompt": "A large sculptural ceramic plant pot as the absolute visual hero — standing prominently at center, a dramatic fiddle leaf fig rising majestically from it, the pot's earthenware texture and form in sharp focus, warm boho-coastal decor softly framing it, the pot commanding the corner of the room, lifestyle interior editorial photography"
+  },
+  {
+    "id": "mesa-jantar",
+    "title": "Mesa de Jantar de Madeira",
+    "desc": "A mesa onde serão feitas muitas histórias, muitos hamburguers, muito macarrão da mãe e provavelmente alguns projetos de reforma esboçados em guardanapo.",
+    "price": 1600,
+    "category": "Casa & Jardim",
+    "imagePrompt": "A solid wood dining table as the complete visual hero — the grain of the wood in fine detail filling the center frame, set simply for Rychell and Mayara with ceramic plates, candles and wine glasses, warm evening light catching the natural surface, a napkin with a sketched floor plan at one corner, coastal home decor visible beyond, interior editorial photography"
+  },
+  {
+    "id": "aspirador-robo",
+    "title": "Aspirador Robô",
+    "desc": "Com tanto projeto DIY, planta pra regar e instrumento pra aprender, não sobra tempo pra varrer o chão. O robô resolve enquanto vocês vivem.",
+    "price": 900,
+    "category": "Casa & Jardim",
+    "imagePrompt": "Hero shot of a modern robot vacuum as the star — seen in mid-motion on gleaming hardwood floors of a bright coastal living room, the robot in sharp focus with its cleaning sensor lights glowing, bookshelves, plants and coastal decor blurring softly behind, the cleaning path visible on the floor, lifestyle interior editorial photography"
+  },
+  {
+    "id": "ar-condicionado",
+    "title": "Ar-Condicionado para o Quarto",
+    "desc": "O verão é longo e o amor é quente. O dormitório precisa de uma temperatura adequada para tudo isso. Investimento no bem-estar do casal.",
+    "price": 1900,
+    "category": "Casa & Jardim",
+    "imagePrompt": "A sleek modern split air conditioner unit mounted prominently on a white wall as the visual hero — the crisp white unit in sharp focus commanding the upper frame, morning sunlight from parted curtains creating a luminous halo around it, a potted tropical plant below, Rychell and Mayara's bedroom in peaceful order, interior lifestyle photography"
+  },
+  {
+    "id": "smart-tv",
+    "title": "Smart TV para a Sala",
+    "desc": "Para maratonar Fringe (de novo), ver Dr. House às 23h e assistir Interestelar pela enésima vez achando que desta vez vão entender o final.",
+    "price": 1800,
+    "category": "Casa & Jardim",
+    "imagePrompt": "A large smart TV mounted on a wall as the undeniable visual centerpiece — the screen glowing with a dramatic Fringe episode scene, Rychell and Mayara's perfect late-night setup — a comfortable sofa in foreground slightly out of focus, warm lamp light on the sides, a popcorn bowl at the edge of the frame, cozy editorial lifestyle photography"
+  },
+  {
+    "id": "camera-fotografica",
+    "title": "Câmera Fotográfica",
+    "desc": "Para registrar as viagens, o jardim florescendo, os projetos DIY concluídos e aquele pôr do sol na praia que merece mais que uma foto de celular.",
+    "price": 1500,
+    "category": "Casa & Jardim",
+    "imagePrompt": "Hero product shot of a modern mirrorless camera at center frame — lens facing the viewer, camera strap elegantly curled beside it on a wooden table, Rychell and Mayara's printed travel photos pinned to a board visible behind, a beach photo prominent among them, tropical plants to one side, warm golden light, lifestyle editorial photography"
+  },
+  {
+    "id": "jantar-romantico",
+    "title": "Jantar Romântico",
+    "desc": "Desta vez sem desculpa e sem culpa de ter demorado tanto pro primeiro encontro. Só os dois, boa comida e aquela conversa que não tem fim.",
     "price": 350,
-    "category": "Casa nova"
+    "category": "Experiências",
+    "badge": "Mais escolhido",
+    "imagePrompt": "A romantic candlelit table for two as the visual hero — candles glowing at center frame, elegant plating in sharp foreground focus, ocean visible through the window in the background, wine glasses casting warm light patterns on the white tablecloth — Rychell and Mayara's perfect date night, no excuses this time, fine dining editorial photography"
   },
   {
-    "id": "plantas",
-    "title": "Plantas pra varanda",
-    "desc": "Costela-de-adão, samambaia e uma jiboia teimosa.",
+    "id": "aula-surf-casal",
+    "title": "Aula de Surf para o Casal",
+    "desc": "O Rychell aprende os movimentos — de surf dessa vez. A Mayara ajuda como sempre fez. Só que agora na prancha. Amor é assim.",
+    "price": 280,
+    "category": "Experiências",
+    "badge": "Favorito da noiva",
+    "imagePrompt": "Two surfboards standing upright in wet sand as the visual heroes — Rychell and Mayara's first surf lesson boards side by side, a surf instructor guiding from the side, bright tropical beach behind them, crystal ocean waves breaking in the distance, joy and adventure radiating from the scene, editorial surf lifestyle photography"
+  },
+  {
+    "id": "aula-culinaria-italiana",
+    "title": "Aula de Culinária Italiana",
+    "desc": "Macarrão da mãe é imbatível, mas e se a Mayara aprendesse a fazer um carbonara de respeito? Sem julgamento, com muito parmesão.",
+    "price": 320,
+    "category": "Experiências",
+    "imagePrompt": "Hands working fresh pasta dough on a flour-dusted marble surface as the absolute hero — Mayara learning Italian technique, a handwritten carbonara recipe card visible beside the pasta machine at center frame, parmesan and ingredients surrounding the workspace, bright Italian-kitchen aesthetic, editorial culinary lifestyle photography"
+  },
+  {
+    "id": "massagem-casal",
+    "title": "Massagem Relaxante a Dois",
+    "desc": "Depois de crossfit, reforma de fim de semana e sessão de ukulele, o corpo pede socorro. Esse presente é a resposta.",
+    "price": 500,
+    "category": "Experiências",
+    "imagePrompt": "A serene couples spa room as the visual hero — two matching massage tables side by side with warm folded towels and tropical flowers, candles creating a golden glow throughout the frame, petals scattered decoratively — Rychell and Mayara's post-crossfit sanctuary — zen and luxurious atmosphere, wellness editorial photography"
+  },
+  {
+    "id": "picnic-especial",
+    "title": "Tarde de Piquenique Especial",
+    "desc": "Cesta, manta, gramado (o de vocês mesmo serve), caipirinha gelada e moscou mule. O jardim dos sonhos começa assim.",
+    "price": 180,
+    "category": "Experiências",
+    "imagePrompt": "A perfectly arranged picnic spread as the absolute visual hero — woven basket open at center, a caipirinha for Rychell and copper moscow mule for Mayara gleaming in sunlight, fruits and cheeses on a checkered blanket on lush green grass — their own backyard garden becoming paradise, lifestyle editorial photography"
+  },
+  {
+    "id": "passeio-caiaque",
+    "title": "Passeio de Caiaque no Mar",
+    "desc": "Para quem ama praia e aventura. Rema, Rychell. Rema, Mayara. Juntos e com protetor solar, por favor.",
+    "price": 220,
+    "category": "Experiências",
+    "imagePrompt": "Two kayaks gliding through crystal-clear tropical water as the absolute visual heroes — seen from slightly elevated angle, Rychell paddling ahead, Mayara following, the turquoise water revealing sandy bottom below, a tropical beach with palm trees at the horizon, vibrant adventure lifestyle editorial photography"
+  },
+  {
+    "id": "sessao-fotos-casal",
+    "title": "Ensaio Fotográfico do Casal",
+    "desc": "Para ter aquelas fotos profissionais que capturam o amor de verdade — e não a foto torta do crachá da academia.",
+    "price": 600,
+    "category": "Experiências",
+    "imagePrompt": "A professional camera on a tripod as the visual hero at golden hour on a sun-drenched beach — the camera in sharp foreground focus, Rychell and Mayara's silhouette just visible in the distance in a candid moment, the golden light itself painting the entire scene, ocean horizon behind them, editorial romance photography"
+  },
+  {
+    "id": "escape-room",
+    "title": "Escape Room para o Casal",
+    "desc": "Como no crossfit, a solução é trabalhar em equipe. Quem resolve o enigma em dupla fica mais forte junto. Provado por especialistas.",
+    "price": 160,
+    "category": "Experiências",
+    "imagePrompt": "A dramatic escape room puzzle board as the absolute visual hero — ciphers, clues, locked boxes and maps pinned at center frame, two pairs of hands reaching in from opposite sides — Rychell and Mayara's teamwork at its peak — a single spotlight illuminating the puzzle dramatically, mystery atmosphere, lifestyle editorial photography"
+  },
+  {
+    "id": "show-mpb",
+    "title": "Show de MPB ao Vivo",
+    "desc": "Gosto em comum: MPB. Uma noite com boa música, boa bebida e boa companhia. Isso sim é qualidade de vida.",
+    "price": 240,
+    "category": "Experiências",
+    "imagePrompt": "A live MPB stage at night as the visual hero — warm spotlight illuminating a guitarist and singer at center frame, the performance commanding the composition, two drinks on a small front table reserving the best spots for Rychell and Mayara, crowd blurring beautifully in bokeh beyond, rich concert atmosphere, editorial music photography"
+  },
+  {
+    "id": "dia-spa",
+    "title": "Dia de Spa Completo",
+    "desc": "Um dia inteiro sem reforma, sem treino, sem ukulele desafinado. Só relaxamento, hidratação e aquela paz que o casal merece.",
+    "price": 700,
+    "category": "Experiências",
+    "imagePrompt": "A luxury spa day setup as the total visual hero — a steaming stone bowl filled with floating flowers and essential oils at center frame, lit candles radiating outward from it, white robes folded elegantly beside, a spa schedule with two names visible — Rychell and Mayara's day of absolute rest, wellness editorial photography"
+  },
+  {
+    "id": "noite-pousada-praia",
+    "title": "Noite em Pousada à Beira-Mar",
+    "desc": "Janela pro mar, café da manhã incluso e a certeza que no dia seguinte vai ter praia. O programa perfeito para o casal.",
+    "price": 550,
+    "category": "Experiências",
+    "imagePrompt": "A charming beachside pousada balcony hammock as the absolute visual hero — the hammock in center frame gently swaying, turquoise ocean stretching to the horizon beyond the railing, a breakfast tray with tropical fruit and coffee waiting in the foreground, coastal pousada architecture framing the scene, morning light, travel editorial photography"
+  },
+  {
+    "id": "aula-fotografia",
+    "title": "Workshop de Fotografia",
+    "desc": "Para registrar as viagens, o jardim e a vida juntos com muito mais estilo do que foto de celular tremido.",
+    "price": 290,
+    "category": "Experiências",
+    "imagePrompt": "A professional camera held up and framing a beautiful coastal scene through its viewfinder as the visual hero — the camera in sharp focus at center, an instructor's hand visible guiding composition, natural light brilliant, Rychell and Mayara learning to capture their world beautifully, outdoor workshop atmosphere, editorial photography lifestyle"
+  },
+  {
+    "id": "noite-teatro",
+    "title": "Noite no Teatro",
+    "desc": "Uma experiência cultural diferente. E se rolar aquele silêncio desconfortável na peça, pelo menos os dois vão rir muito depois.",
+    "price": 200,
+    "category": "Experiências",
+    "imagePrompt": "A grand theater interior as the absolute visual hero — deep red velvet seats curving elegantly in foreground, a dramatically lit stage beyond, an evening program booklet in foreground focus showing the night's performance, two reserved seats just visible — the grandeur of the theater commanding every inch of frame, cultural lifestyle editorial photography"
+  },
+  {
+    "id": "tour-gastronomico",
+    "title": "Tour Gastronômico pela Cidade",
+    "desc": "Hamburguer pra ele, comida de cafeteria pra ela, e muito mais no meio. Uma tarde comendo e explorando a cidade juntos.",
+    "price": 260,
+    "category": "Experiências",
+    "imagePrompt": "A vibrant food tour spread as the visual hero — an artisan burger for Rychell and colorful Brazilian snacks for Mayara arranged side by side on a market stall, both dishes close-up and vivid, the street market atmosphere glowing with warm afternoon light behind, flavors of the city in perfect editorial focus, food travel photography"
+  },
+  {
+    "id": "degustacao-drinks",
+    "title": "Degustação de Drinks Especiais",
+    "desc": "Caipirinha pro Rychell, moscou mule pra Mayara e soda italiana de cortesia pra alegrar ainda mais. Saúde ao casal!",
+    "price": 180,
+    "category": "Experiências",
+    "imagePrompt": "Three signature drinks as the absolute visual heroes — Rychell's classic caipirinha, Mayara's gleaming copper moscow mule, and a fizzing Italian soda — arranged side by side at center frame on a bar counter, each glass backlit and glowing, citrus garnishes and crushed ice surrounding them, warm editorial bar photography"
+  },
+  {
+    "id": "aula-danca-forro",
+    "title": "Aulas de Forró para o Casal",
+    "desc": "A Mayara já manda bem. O Rychell vai aprender com amor e paciência. Assim como no crossfit, tudo melhora com prática.",
+    "price": 230,
+    "category": "Experiências",
+    "imagePrompt": "A couple in a forró dance mid-spin as the visual hero — Mayara's natural grace and Rychell finding his rhythm at center frame, the instructor watching approvingly in background, a bright dance studio with wooden floors, warm stage lighting, vibrant Brazilian dance culture, editorial lifestyle photography"
+  },
+  {
+    "id": "passagem-lua-mel",
+    "title": "Contribuição para a Passagem da Lua de Mel",
+    "desc": "Pra onde forem, a gente vai junto de coração. Que seja lindo, quente e com muito sol.",
+    "price": 800,
+    "category": "Lua de Mel",
+    "badge": "Mais querido",
+    "imagePrompt": "Two boarding passes side by side as the absolute visual heroes — the names Rychell and Mayara just legible on the tickets, a tropical destination stamp, sunglasses and a passport resting alongside on a warm wooden surface, golden afternoon light illuminating the scene, a new chapter beginning, travel editorial photography"
+  },
+  {
+    "id": "hospedagem-praia-lua-mel",
+    "title": "Hospedagem na Praia — Lua de Mel",
+    "desc": "Janela pro mar, brisa boa, café da manhã bonito e os dois sem nenhum compromisso. Isso é lua de mel do jeito certo.",
+    "price": 600,
+    "category": "Lua de Mel",
+    "imagePrompt": "A private balcony hammock with a turquoise ocean view as the total visual hero — the hammock in center frame gently swaying, the honeymoon ocean stretching to the horizon behind, white linen and tropical flowers in the foreground — Rychell and Mayara's perfect escape from everything, romantic editorial honeymoon photography"
+  },
+  {
+    "id": "cafe-manha-lua-mel",
+    "title": "Café da Manhã Especial — Lua de Mel",
+    "desc": "Porque o primeiro café da manhã como casados precisa ser à altura. Frutas, croissant, suco e vista pro mar, no mínimo.",
     "price": 120,
-    "category": "Casa nova"
+    "category": "Lua de Mel",
+    "imagePrompt": "A luxurious honeymoon breakfast tray as the absolute visual hero — stacked high with tropical fruits, warm pastries and a coffee glowing in morning light, the tray presented on crisp white linen sheets at center frame, the ocean visible in glorious soft focus beyond the window — Rychell and Mayara's first morning as husband and wife, romantic editorial photography"
   },
   {
-    "id": "livros",
-    "title": "Livros pra estante",
-    "desc": "Pra ler em voz alta nas tardes de domingo.",
-    "price": 90,
-    "category": "Casa nova"
+    "id": "passeio-barco-lua-mel",
+    "title": "Passeio de Barco — Lua de Mel",
+    "desc": "Navegar junto é quase uma metáfora da vida a dois. Menos dramático do que parece, mais bonito do que qualquer foto.",
+    "price": 350,
+    "category": "Lua de Mel",
+    "imagePrompt": "A sailboat bow cutting dramatically through turquoise honeymoon water as the visual hero — the bow filling the foreground, ocean spray catching golden sunset light, island silhouettes on the horizon, Rychell and Mayara's horizon stretching open ahead, editorial honeymoon travel photography"
   },
   {
-    "id": "cinema",
-    "title": "Sessão de cinema",
-    "desc": "Pipoca, refrigerante e um filme que a gente nem precisa concordar.",
+    "id": "mergulho-lua-mel",
+    "title": "Mergulho — Lua de Mel",
+    "desc": "Explorar o fundo do mar juntos. Spoiler: é lindo. E não tem academia que prepare a gente pra essa vista.",
+    "price": 300,
+    "category": "Lua de Mel",
+    "imagePrompt": "A vibrant underwater coral reef as the absolute visual hero — colorful fish darting through staghorn coral at center frame, crystal turquoise water with sunlight filtering from above, two figures just visible above reaching down toward this world — Rychell and Mayara discovering something no crossfit session ever prepared them for, underwater editorial photography"
+  },
+  {
+    "id": "jantar-beira-mar-lua-mel",
+    "title": "Jantar à Beira-Mar — Lua de Mel",
+    "desc": "Mesa na areia, vela, estrelas, som do mar. Da primeira saída no Hard Rock Café até aqui foi uma história bonita.",
+    "price": 450,
+    "category": "Lua de Mel",
+    "imagePrompt": "A beach dinner table set for two as the complete visual hero — white tablecloth and glowing candles at center frame, the dark ocean just beyond the candlelight's reach, stars above, the first course already plated, wine glasses glinting — Rychell and Mayara's most romantic evening, from the Hard Rock Café to here, editorial honeymoon photography"
+  },
+  {
+    "id": "spa-lua-mel",
+    "title": "Spa & Relaxamento — Lua de Mel",
+    "desc": "A versão upgradeada da massagem a dois. Na lua de mel, tudo sobe de nível. Exceto o guarda-roupa, mas esse já foi substituído.",
+    "price": 500,
+    "category": "Lua de Mel",
+    "imagePrompt": "A luxury resort couples spa suite as the total visual hero — two side-by-side massage beds with flower petal trails leading to them, a steaming soaking tub beyond, white orchids and candles framing the scene — Rychell and Mayara's ultimate relaxation, the upgraded experience radiating pure luxury, editorial spa photography"
+  },
+  {
+    "id": "tour-cultural-lua-mel",
+    "title": "Tour Cultural — Lua de Mel",
+    "desc": "Conhecer o lugar de verdade, além da praia e do resort. Cultura, história e aquela foto em frente ao monumento que todo mundo tira.",
+    "price": 250,
+    "category": "Lua de Mel",
+    "imagePrompt": "A charming colonial city street as the visual hero — vibrant pastel architecture lining a cobblestone boulevard filling the frame, a travel guide open in the foreground, Rychell and Mayara's silhouette just visible exploring around a corner, golden sunlight raking dramatically across the facades, travel editorial honeymoon photography"
+  },
+  {
+    "id": "transfer-lua-mel",
+    "title": "Transfer Aeroporto — Lua de Mel",
+    "desc": "Para começar a lua de mel com o pé direito, sem stress de táxi ou fila de ônibus carregando mala.",
+    "price": 150,
+    "category": "Lua de Mel",
+    "imagePrompt": "A premium private car door opening at an airport curb as the visual hero — white leather interior glowing, a welcome sign reading 'Rychell & Mayara' visible on the seat, their luggage stacked neatly nearby, a honeymoon journey officially beginning, warm sunset light from beyond the terminal, editorial travel photography"
+  },
+  {
+    "id": "voo-panoramico",
+    "title": "Passeio de Avião Panorâmico",
+    "desc": "Ver o litoral do alto. A vista é de tirar o fôlego — e não é do treino no crossfit dessa vez.",
+    "price": 400,
+    "category": "Lua de Mel",
+    "imagePrompt": "The panoramic view from inside a small scenic flight plane as the absolute hero — the aircraft window frame in sharp foreground focus, turquoise coastal water and lush green islands stretching dramatically to the horizon beyond, the winglet catching golden light — Rychell and Mayara's new perspective on the world, editorial adventure photography"
+  },
+  {
+    "id": "prancha-surf",
+    "title": "Prancha de Surf",
+    "desc": "Uma boa prancha é um investimento. E o surf é um esporte de longa duração, ao contrário do cavaquinho que por enquanto ainda tá começando.",
+    "price": 900,
+    "category": "Praia & Surf",
+    "badge": "Favorito do noivo",
+    "imagePrompt": "A surfboard as the absolute visual hero — standing vertically in wet sand, the board's fins and design in crisp detail at center frame, ocean waves breaking dramatically behind it, foam washing around the base, Rychell's board gleaming in the setting sun as if waiting for its rider, editorial surf photography"
+  },
+  {
+    "id": "barraca-praia",
+    "title": "Barraca de Praia Premium",
+    "desc": "Uma barraca boa é a base de qualquer dia de praia bem-sucedido. Grande o suficiente pra dois, resistente pro sol.",
+    "price": 280,
+    "category": "Praia & Surf",
+    "imagePrompt": "A large premium beach tent as the total visual hero — fully erected on bright white sand, its shade spreading dramatically in center frame, two beach chairs positioned beneath it, the tent fabric catching a sea breeze, ocean glittering beyond — the perfect basecamp for Rychell and Mayara's beach days, editorial lifestyle photography"
+  },
+  {
+    "id": "cooler-premium",
+    "title": "Cooler Premium de Praia",
+    "desc": "Caipirinha gelada na praia é direito constitucional. O cooler certo faz tudo melhor e mantém o smoothie de morango do Rychell intacto.",
+    "price": 350,
+    "category": "Praia & Surf",
+    "imagePrompt": "A premium cooler as the undeniable visual hero — lid open, overflowing with ice at center frame, Rychell's strawberry smoothie in a mason jar nestled prominently inside, a caipirinha and Mayara's drinks beside it, cold mist rising, the ocean beach blurred behind, editorial lifestyle beach photography"
+  },
+  {
+    "id": "cadeiras-praia",
+    "title": "Cadeiras de Praia Dobráveis",
+    "desc": "Sentar no chão tem seu charme, mas depois de uma boa faixa dos 30, uma cadeirinha confortável é um presente de Deus.",
+    "price": 180,
+    "category": "Praia & Surf",
+    "imagePrompt": "Two matching beach chairs as the visual heroes — side by side facing the ocean, one for Rychell and one for Mayara, cup holders filled with cold drinks, the sea at the perfect viewing distance ahead, warm tropical afternoon light bathing the scene, editorial beach lifestyle photography"
+  },
+  {
+    "id": "kit-snorkel",
+    "title": "Kit de Snorkel Premium",
+    "desc": "Para explorar o fundo do mar em qualquer praia que forem. E a máscara decente faz toda a diferença na experiência.",
+    "price": 220,
+    "category": "Praia & Surf",
+    "imagePrompt": "A premium snorkel kit as the absolute visual hero — mask, fins and snorkel arranged artfully on white coral sand at center frame, light refracting through the clear mask lens, crystal tropical water just behind — Rychell and Mayara's underwater world waiting to be explored, editorial beach adventure photography"
+  },
+  {
+    "id": "bolsa-praia-impermeavel",
+    "title": "Bolsa de Praia Impermeável",
+    "desc": "Para levar tudo na praia sem o drama de a areia entrar em tudo. A Mayara agradece, a prancha do Rychell também.",
+    "price": 160,
+    "category": "Praia & Surf",
+    "imagePrompt": "A stylish waterproof beach bag as the complete visual hero — open at center frame, Mayara's sunscreen, a book and Rychell's surf wax peeking out in perfect arrangement, the bag standing on a bright wooden deck, ocean horizon in the background, practical and beautiful, editorial beach lifestyle photography"
+  },
+  {
+    "id": "protetor-solar-kit",
+    "title": "Kit Protetor Solar de Qualidade",
+    "desc": "Com tanta praia na agenda, protetor solar não é opcional. É um investimento na pele saudável por muitos anos de surf pela frente.",
+    "price": 120,
+    "category": "Praia & Surf",
+    "imagePrompt": "A premium sunscreen collection as the visual hero — tubes and bottles arranged in a precise row on a sandy surface, each label in sharp focus at center frame, the ocean sparkling behind, Rychell's surfboard fin visible at one edge — protection for years of beach adventures ahead, natural lifestyle editorial photography"
+  },
+  {
+    "id": "deck-madeira-jardim",
+    "title": "Deck de Madeira para o Jardim",
+    "desc": "Pra transformar o gramado em espaço de lazer. Perfeito debaixo do varal de luzes, perto da churrasqueira e com um violão do lado.",
+    "price": 1200,
+    "category": "Praia & Surf",
+    "imagePrompt": "A solid wooden garden deck as the total visual hero — the planks filling center frame, string lights glowing above it at evening, the churrasqueira smoke visible to one side, a guitar leaning against the railing — Rychell and Mayara's backyard dream materialized, editorial lifestyle garden photography"
+  },
+  {
+    "id": "capa-prancha-viagem",
+    "title": "Capa de Prancha para Viagem",
+    "desc": "Para levar a prancha com segurança nas viagens de praia pelo Brasil. E um dia, quem sabe, até pra surf na Europa.",
+    "price": 340,
+    "category": "Praia & Surf",
+    "imagePrompt": "A surf board travel bag as the visual hero — standing upright beside a van loaded for a road trip, a map of Brazil's coastline on the dashboard visible through the windshield, Rychell's name tag dangling from the bag's zipper, the open road ahead, editorial surf travel photography"
+  },
+  {
+    "id": "sup-stand-up-paddle",
+    "title": "Stand Up Paddle (SUP)",
+    "desc": "O surf já é. Mas o SUP tem um charme diferente. Explorar o mar em pé e com remo é diferente de tudo.",
+    "price": 1100,
+    "category": "Praia & Surf",
+    "imagePrompt": "A stand-up paddle board as the absolute visual hero — lying flat on calm water near the beach, the paddle across it at center frame, crystal clear shallow water revealing the sandy bottom below, sunrise colors reflecting dramatically on the mirror-like surface, epic scale and calm, editorial SUP lifestyle photography"
+  },
+  {
+    "id": "violao-novo",
+    "title": "Violão Novo",
+    "desc": "O violão da casa já tem uns anos de estrada. Chegou a hora de um reforço. Talvez com um instrumento novo, a música saia com mais facilidade. Talvez.",
+    "price": 700,
+    "category": "Música",
+    "imagePrompt": "A beautiful acoustic guitar as the visual hero — held upright at center frame, the wood grain and rosette in exquisite detail, soft warm light illuminating it, the bookshelves of Rychell and Mayara's home visible in soft focus behind, an open MPB songbook on a stand beside it, music lifestyle editorial photography"
+  },
+  {
+    "id": "ukulele-novo",
+    "title": "Ukulele Premium",
+    "desc": "O ukulele já está em casa, mas um upgrade vai fazer diferença. Quatro cordas, muito charme e a ambição de uma tarde completa tocando na varanda.",
+    "price": 420,
+    "category": "Música",
+    "imagePrompt": "A premium mahogany ukulele as the absolute visual hero — cradled in a hammock with floral strap visible, the four strings and fretboard catching warm afternoon light, the ocean glittering just beyond the railing — Rychell's future varanda sessions about to level up considerably, editorial music lifestyle photography"
+  },
+  {
+    "id": "aulas-violao",
+    "title": "Aulas de Violão — 1 Mês",
+    "desc": "Porque ter o violão é o primeiro passo. O segundo é tocar de verdade. Um mês de aulas e a casa vira um bar de MPB.",
+    "price": 350,
+    "category": "Música",
+    "imagePrompt": "A guitar neck in close-up as the visual hero — Rychell's fingers placed on a chord in sharp focus at center frame, the strings catching warm lamp light, sheet music and a progress notebook beside the guitar body, an instructor's hand guiding the position, editorial music learning lifestyle photography"
+  },
+  {
+    "id": "caixa-som-bluetooth",
+    "title": "Caixa de Som Bluetooth Premium",
+    "desc": "Para o jardim, para a praia, para a churrasqueira. Forró pra Mayara, MPB pra Rychell — a caixa aguenta os dois.",
+    "price": 480,
+    "category": "Música",
+    "imagePrompt": "A premium Bluetooth speaker as the absolute visual hero — glowing with active indicator light at center frame, placed on a garden table beneath string lights, Rychell's caipirinha to one side, Mayara's moscow mule to the other — MPB and forró vibes radiating from the scene, outdoor evening editorial photography"
+  },
+  {
+    "id": "show-forro",
+    "title": "Ingressos para Show de Forró",
+    "desc": "A Mayara ama. O Rychell aprende mais uma vez. Assim como no crossfit, com paciência e amor, vai dando certo.",
+    "price": 200,
+    "category": "Música",
+    "imagePrompt": "A forró stage with a dancing couple as the visual hero — Mayara in full joy at center frame mid-spin, Rychell finding his rhythm just behind her, a live band lit in warm amber stage light behind them, vibrant Brazilian music culture and celebration, editorial concert lifestyle photography"
+  },
+  {
+    "id": "suporte-instrumentos",
+    "title": "Suporte para Instrumentos Musicais",
+    "desc": "Porque violão, teclado, cavaquinho e ukulele merecem um lugar organizado e bonito. Parece muito, mas é muita música pra acontecer.",
+    "price": 250,
+    "category": "Música",
+    "imagePrompt": "A beautiful instrument stand display as the visual hero — Rychell's guitar, ukulele and cavaquinho all mounted and gleaming at center frame, the stand itself a sculptural home element, bookshelves and Mayara's art on the walls softly framing the scene, warm living room lighting, music home decor editorial photography"
+  },
+  {
+    "id": "microfone-karaoke",
+    "title": "Microfone para Karaokê em Casa",
+    "desc": "Para as noites de churrasqueira que inevitavelmente viram show. Com bluetooth e reverb, até quem toca pouco parece profissional.",
+    "price": 190,
+    "category": "Música",
+    "imagePrompt": "A wireless karaoke microphone as the visual hero — held at performance height and glowing with reverb indicator under backyard string lights, the churrasqueira smoke visible beyond, Rychell and Mayara's friends in the background in spontaneous joy, Brazilian house party night, editorial lifestyle photography"
+  },
+  {
+    "id": "toca-discos-vinil",
+    "title": "Toca-Discos + Vinil de MPB",
+    "desc": "Porque a coleção de vinil começa com um presente. MPB num sábado de chuva com cheiro de terra molhada é a melhor combinação.",
+    "price": 650,
+    "category": "Música",
+    "imagePrompt": "A vintage vinyl record player as the absolute visual hero — the needle touching a spinning MPB record at center frame, the warm glow of the player's light reflecting on the vinyl surface — Rychell and Mayara's Saturday afternoon ritual — bookshelves and a rain-wet window visible in warm soft focus, editorial home music photography"
+  },
+  {
+    "id": "caneca-roma",
+    "title": "Caneca de Viagem — Roma",
+    "desc": "Pra quando o plano Europa finalmente sair do papel. E vai sair, a gente sabe. Guardada com carinho até lá.",
+    "price": 80,
+    "category": "Viagem",
+    "imagePrompt": "A ceramic Rome travel mug as the undeniable visual hero — the Colosseum illustration in crisp close-up focus at center frame, a tiny espresso beside it, a folded map of Italy beneath — Rychell and Mayara's European dream growing more tangible every day, warm travel planning editorial photography"
+  },
+  {
+    "id": "caneca-paris",
+    "title": "Caneca de Viagem — Paris",
+    "desc": "Torre Eiffel, croissant, café e a Mayara tirando foto de tudo. O Rychell tentando fazer o mesmo com a câmera nova.",
+    "price": 80,
+    "category": "Viagem",
+    "imagePrompt": "A ceramic Paris travel mug as the visual hero — the Eiffel Tower illustration glowing at center frame, a croissant resting beside it, Mayara's camera strap draped casually over the mug handle — ready for her to photograph everything — the dream of Paris almost tangible, editorial travel lifestyle photography"
+  },
+  {
+    "id": "caneca-florianopolis",
+    "title": "Caneca de Viagem — Florianópolis",
+    "desc": "A praia mais famosa do Sul espera por vocês. A caneca vai servir pro café da manhã antes de ir pra água.",
     "price": 60,
-    "category": "Pra nós"
+    "category": "Viagem",
+    "imagePrompt": "A ceramic Florianópolis travel mug as the visual hero — the beach illustration in sharp focus at center, the mug sitting on a bright beach towel with ocean waves blurring beautifully behind it — Rychell and Mayara's next Brazilian adventure calling, editorial travel lifestyle photography"
+  },
+  {
+    "id": "roteiro-italia",
+    "title": "Contribuição para o Roteiro pela Itália",
+    "desc": "Roma, Florença, Cinque Terre... ou só Roma e muita pizza. Do jeito que for, vai ser incrível. Ajuda simbólica pra esse sonho europeu.",
+    "price": 1000,
+    "category": "Viagem",
+    "badge": "Sonho do casal",
+    "imagePrompt": "An Italy travel itinerary spread as the absolute visual hero — a detailed map with Rychell and Mayara's route highlighted in pen, Colosseum and Duomo postcards pinned to it, pasta ingredients and an espresso surrounding the planning scene, their dream trip taking shape, editorial travel lifestyle photography"
+  },
+  {
+    "id": "viagem-salvador",
+    "title": "Contribuição para Viagem a Salvador",
+    "desc": "Axé, dendê, mar azul e acarajé. A Mayara vai adorar. O Rychell vai tentar aprender a dançar axé e vai se sair melhor que no ukulele.",
+    "price": 500,
+    "category": "Viagem",
+    "imagePrompt": "The vibrant Pelourinho colonial architecture of Salvador Bahia as the visual hero — colorful facades filling center frame, Mayara's silhouette photographing the street ahead, Rychell visible nearby attempting his best axé rhythm, sunny tropical day, vibrant Brazilian culture, travel editorial photography"
+  },
+  {
+    "id": "mochila-viagem",
+    "title": "Mochila de Viagem Premium",
+    "desc": "Para as viagens de praia, cidades históricas e um dia, o aeroporto internacional. Espaçosa, resistente e estilosa.",
+    "price": 380,
+    "category": "Viagem",
+    "imagePrompt": "A premium travel backpack as the complete visual hero — standing upright on a stone wall, fully packed and ready, mountains or ocean creating a dramatic background at scale, all straps and compartments in sharp focus — Rychell and Mayara's adventures packed inside, editorial travel photography"
+  },
+  {
+    "id": "chip-internacional",
+    "title": "Chip Internacional de Dados",
+    "desc": "Para quando a Europa chegar, não ficar sem internet tentando achar a gelateria mais próxima. Prioridade máxima.",
+    "price": 90,
+    "category": "Viagem",
+    "imagePrompt": "A travel SIM card held up against a window as the visual hero — a European cityscape visible through it, the card in sharp focus at center frame, a passport and boarding pass beneath, Rychell and Mayara's connectivity for finding the nearest gelateria secured, editorial travel lifestyle photography"
+  },
+  {
+    "id": "organizador-canecas",
+    "title": "Rack Organizador para Canecas de Viagem",
+    "desc": "A coleção já começou. Ela precisa de um lugar bonito pra ficar. Afinal, caneca guardada na caixa não conta como coleção.",
+    "price": 140,
+    "category": "Viagem",
+    "imagePrompt": "A wall-mounted wooden mug rack as the absolute visual hero — Rychell and Mayara's growing travel souvenir collection displayed beautifully, Roma, Paris and Florianópolis mugs among others, each mug's unique glazes catching warm kitchen light, the rack as a map of their shared adventures, editorial home decor photography"
+  },
+  {
+    "id": "hospedagem-noronha",
+    "title": "Contribuição para Fernando de Noronha",
+    "desc": "O paraíso do Brasil. Caro, lindo e inesquecível. Toda contribuição conta pra esse sonho se realizar.",
+    "price": 700,
+    "category": "Viagem",
+    "imagePrompt": "Fernando de Noronha's iconic volcanic rock formation and turquoise lagoon as the absolute visual hero — dramatic cliffs filling the upper frame in full glory, the most impossibly clear water below, a couple's silhouette on the viewpoint above — Rychell and Mayara's Brazil dream destination in its most breathtaking form, editorial travel photography"
+  },
+  {
+    "id": "claude-code-pro-rychell",
+    "title": "Licença Claude Code Pro — Rychell",
+    "desc": "Porque o Rychell já pediu pro Claude consertar o guarda-roupa e não foi tão bem. No código, pelo menos, a IA entende o que ele quer.",
+    "price": 200,
+    "category": "Para o Rychell",
+    "badge": "Favorito do noivo",
+    "imagePrompt": "A developer's dual monitor setup as the visual hero — Claude Code terminal open and active on one screen, a code editor on the other, Rychell's home office aesthetic fully visible: warm indirect lighting, a coffee cup, plants, stacks of tech books — the AI assistant chat glowing as the compositional focal point, editorial home office photography"
+  },
+  {
+    "id": "liquidificador-smoothie",
+    "title": "Liquidificador de Alta Performance",
+    "desc": "Smoothie de morango todo dia. O Rychell não abre mão. Com esse liquidificador, a textura fica perfeita e o vizinho reclama em 10 segundos.",
+    "price": 380,
+    "category": "Para o Rychell",
+    "imagePrompt": "A premium high-speed blender as the absolute visual hero — the glass container at center frame filled with swirling deep red strawberry smoothie mid-blend, fresh strawberries arranged dramatically around the base, Rychell's mandatory daily ritual in motion, bright morning kitchen light, editorial lifestyle food photography"
+  },
+  {
+    "id": "fone-ouvido-home-office",
+    "title": "Fone de Ouvido com Cancelamento de Ruído",
+    "desc": "Para as horas de foco no home office quando a Mayara resolve praticar o ukulele na sala. Harmonia de um jeito diferente.",
+    "price": 650,
+    "category": "Para o Rychell",
+    "imagePrompt": "Premium noise-canceling headphones as the absolute visual hero — displayed on a desk stand at center frame, Rychell's home office fully visible behind: dual monitors with code, bookshelves, plants — the headphones as his Mayara's-ukulele-proof focus shield, editorial home office lifestyle photography"
+  },
+  {
+    "id": "livros-tech-rychell",
+    "title": "Acervo de Livros de Tecnologia",
+    "desc": "Para o home office ficar ainda mais completo. Estante cheia, mente afiada e um tema de conversa diferente no café da manhã.",
+    "price": 280,
+    "category": "Para o Rychell",
+    "imagePrompt": "A curated stack of technology and programming books as the visual hero — spines facing the camera with titles visible at center frame, a laptop open beside them, Rychell's coffee cup balancing on top of the stack, his home office bookshelf filling the background, warm study light, editorial learning lifestyle photography"
+  },
+  {
+    "id": "cadeira-ergonomica",
+    "title": "Cadeira Ergonômica para Home Office",
+    "desc": "Porque trabalhar curvado não é ergonômico nem bonito. Investimento no corpo do Rychell que também treina crossfit e precisa da coluna boa.",
+    "price": 1100,
+    "category": "Para o Rychell",
+    "imagePrompt": "A premium ergonomic office chair as the total visual hero — centered and slightly angled to show its full form commanding center frame, Rychell's complete work setup visible behind: dual monitors, bookshelves, plants and natural light — the chair as the axis of his productivity, editorial lifestyle photography"
+  },
+  {
+    "id": "curso-dev-rychell",
+    "title": "Assinatura de Plataforma de Cursos Dev",
+    "desc": "Porque aprender não tem data de validade. Um ano de acesso a cursos pra manter o Rychell sempre na fronteira do conhecimento.",
+    "price": 300,
+    "category": "Para o Rychell",
+    "imagePrompt": "A laptop screen showing a coding tutorial as the visual hero — clear, well-structured code visible at center frame, Rychell's notebook with handwritten notes beside it, a cooling coffee cup and headphones nearby, his bookshelf in background — the glow of continuous learning, editorial home office lifestyle photography"
+  },
+  {
+    "id": "clube-livro-rychell",
+    "title": "Assinatura de Clube do Livro",
+    "desc": "Para a biblioteca crescer no bom sentido. Um livro novo por mês é uma viagem nova todo mês sem sair de casa.",
+    "price": 180,
+    "category": "Para o Rychell",
+    "imagePrompt": "A subscription book box being unwrapped as the visual hero — a new book emerging from tissue paper and ribbon at center frame, a personalized note visible for Rychell, his reading corner visible behind: cozy armchair, bookshelves, warm lamp — a new story arriving every month, editorial lifestyle photography"
+  },
+  {
+    "id": "monitor-home-office",
+    "title": "Monitor Extra para o Home Office",
+    "desc": "Duas telas, o dobro de produtividade. E o dobro de abas abertas. O home office do Rychell merece esse upgrade.",
+    "price": 850,
+    "category": "Para o Rychell",
+    "imagePrompt": "A widescreen monitor as the absolute visual hero — angled dramatically to show its full glowing surface at center frame, Rychell's productivity setup visible: keyboard, coffee, code on screen and a browser with thirty tabs — the second screen that doubles everything he can do, editorial home office lifestyle photography"
+  },
+  {
+    "id": "tintas-profissionais-mayara",
+    "title": "Kit de Tintas Acrílicas Profissionais",
+    "desc": "Para a artista que vai transformar o quarto da bagunça em ateliê. Cores profissionais, pinceladas que fazem história.",
+    "price": 380,
+    "category": "Para a Mayara",
+    "imagePrompt": "A fan of professional acrylic paint tubes as the absolute visual hero — arranged in a full chromatic arc from warm to cool at center frame, Mayara's paint-stained palette beside them telling the story of work already done, brushes lined up below, natural studio light raking across the pigment textures, editorial art lifestyle photography"
+  },
+  {
+    "id": "academia-mayara",
+    "title": "Assinatura de Academia — 1 Ano",
+    "desc": "Porque o crossfit une e motiva, mas uma academia mais perto de casa nos dias de semana também é um luxo.",
+    "price": 900,
+    "category": "Para a Mayara",
+    "imagePrompt": "A set of perfectly racked free weights as the visual hero — gleaming under gym lights at center frame, Mayara's crossfit gloves and water bottle placed deliberately in front, a bright modern gym interior in sharp focus, the energy of dedication and strength radiating from the scene, editorial fitness lifestyle photography"
+  },
+  {
+    "id": "avental-artista",
+    "title": "Avental de Artista Premium",
+    "desc": "Para criar sem medo de manchar. Um avental bonito faz parte do ritual do ateliê. A arte começa antes de pegar o pincel.",
+    "price": 120,
+    "category": "Para a Mayara",
+    "imagePrompt": "A premium canvas artist apron as the visual hero — hanging from Mayara's easel at center frame, paint streaks and color marks telling the rich story of work already done, her brushes in the front pocket ready, a fresh canvas waiting behind it, the apron as the emblem of her creative practice, editorial art studio photography"
+  },
+  {
+    "id": "livros-arte-mayara",
+    "title": "Coleção de Livros de Arte e Pintura",
+    "desc": "Para a biblioteca crescer no eixo artístico. Técnicas, histórias, artistas e referências. A estante já tem espaço separado.",
+    "price": 240,
+    "category": "Para a Mayara",
+    "imagePrompt": "A stack of beautiful art reference books as the visual hero — covers showing masterwork paintings, one opened to an inspiring illustrated spread at center frame, Mayara's paint-stained hand turning a page, her studio bookshelf visible behind, natural light catching the glossy covers, editorial art lifestyle photography"
+  },
+  {
+    "id": "kit-yoga-mayara",
+    "title": "Kit de Yoga Completo",
+    "desc": "Para equilibrar o treino intenso com um momento mais calmo. Tapete, bloco, faixa e aquela paz que vem com a prática.",
+    "price": 260,
+    "category": "Para a Mayara",
+    "imagePrompt": "A premium yoga mat rolled open as the visual hero — its texture filling the foreground in crisp detail at center, a yoga block and strap arranged beside it, Mayara's serene morning practice suggested by the light — warm sunrise streaming across a bright room, tropical plants in background, editorial wellness lifestyle photography"
+  },
+  {
+    "id": "workshop-pintura-mayara",
+    "title": "Workshop de Pintura em Tela",
+    "desc": "Aprender com quem domina a técnica acelera tudo. Um fim de semana de workshop e o ateliê já tem a primeira obra-prima.",
+    "price": 350,
+    "category": "Para a Mayara",
+    "imagePrompt": "Mayara's hands holding a brush to a canvas as the visual hero — mid-stroke, paint fresh and glistening at center frame, an instructor's hand visible guiding the composition, a workshop studio full of canvases and artists in warm soft focus behind, the moment of creation itself captured, editorial art workshop photography"
+  },
+  {
+    "id": "curso-aquarela-mayara",
+    "title": "Curso Online de Aquarela",
+    "desc": "Porque pintura não é só acrílica. A aquarela tem uma leveza que combina com o estilo de vida praiano e aconchegante da Mayara.",
+    "price": 180,
+    "category": "Para a Mayara",
+    "imagePrompt": "Watercolor paint blooming into wet paper as the absolute visual hero — vibrant tropical flower colors spreading in organic patterns at center frame, Mayara's brush lifting away in the moment of creation, a glass of water with swirling pigment beside it — the delicate magic of aquarela in perfect editorial focus, art lifestyle photography"
+  },
+  {
+    "id": "skincare-premium-mayara",
+    "title": "Kit de Skincare Premium",
+    "desc": "Para cuidar da pele que enfrenta sol, praia, sal, crossfit e tinta de aquarela. A Mayara merece uma rotina de cuidado à altura.",
+    "price": 320,
+    "category": "Para a Mayara",
+    "imagePrompt": "A curated premium skincare routine as the visual hero — cleanser, serum and moisturizer in a precise row on a marble surface at center frame, tropical flowers and a glass of water surrounding them — Mayara's morning ritual laid out with care, soft golden light, beauty editorial lifestyle photography"
+  },
+  {
+    "id": "aula-culinaria-mayara",
+    "title": "Aulas de Culinária Especial",
+    "desc": "O macarrão da mãe é imbatível, mas com técnica profissional o cardápio de casa vai ficar ainda mais especial. Spoiler: Rychell vai pedir bis.",
+    "price": 280,
+    "category": "Para a Mayara",
+    "imagePrompt": "Fresh pasta being hand-cut on a flour-covered wooden board as the absolute visual hero — Mayara's hands in motion at center frame, the knife and pasta ribbon in sharp focus, a recipe card partially assembled beside her, Rychell visible in the background at the dining table already waiting, editorial culinary lifestyle photography"
+  },
+  {
+    "id": "netflix-anual",
+    "title": "Netflix Premium — 1 Ano",
+    "desc": "Fringe (de novo), Dr. House, The Mentalist, Interestelar na tela grande e Comer Rezar e Amar na cama. Uma maratona pra cada humor.",
+    "price": 400,
+    "category": "Pra Nós",
+    "imagePrompt": "A large TV screen as the visual hero — showing the Fringe title card glowing at center frame, the streaming menu also showing Dr. House and The Mentalist ready to queue, two blankets and a popcorn bowl in the foreground hinting at Rychell and Mayara's perfect late night, warm dim living room light, editorial lifestyle photography"
+  },
+  {
+    "id": "spotify-premium-anual",
+    "title": "Spotify Premium Compartilhado — 1 Ano",
+    "desc": "MPB na cozinha, axé na festa, forró na churrasqueira e rock quando a reforma não tá indo bem. Uma playlist pra cada momento.",
+    "price": 280,
+    "category": "Pra Nós",
+    "imagePrompt": "A smartphone showing an MPB album as the visual hero — the screen glowing with music visualizer at center frame, propped beside a Bluetooth speaker in a warm kitchen, Rychell and Mayara cooking together in soft focus behind — the soundtrack of their life together, editorial lifestyle photography"
+  },
+  {
+    "id": "jogo-tabuleiro",
+    "title": "Coleção de Jogos de Tabuleiro",
+    "desc": "Para as noites em que a internet cai, a série acabou e os instrumentos estão desafinados. Competição saudável faz o casal mais unido.",
+    "price": 220,
+    "category": "Pra Nós",
+    "imagePrompt": "A board game mid-play as the absolute visual hero — pieces, cards and dice spread dramatically at center frame, two drinks at opposing sides suggesting Rychell and Mayara facing off, a warm lamp illuminating the game board as the battlefield, cozy evening competition, editorial game night lifestyle photography"
+  },
+  {
+    "id": "cinema-casa",
+    "title": "Kit Cinema em Casa",
+    "desc": "Pipoca gourmet, cobertor, tela grande e Interestelar pela quinta vez. Desta vez o Rychell para pra explicar o final de uma vez por todas.",
+    "price": 300,
+    "category": "Pra Nós",
+    "imagePrompt": "A home cinema setup as the visual hero — a large TV showing Interstellar's iconic docking scene at center frame, a popcorn bowl in the close foreground, two blankets on the sofa suggesting Rychell and Mayara ready to finally understand the ending, warm dim light, editorial lifestyle movie night photography"
+  },
+  {
+    "id": "hamburguer-gourmet",
+    "title": "Kit Hamburguer Gourmet em Casa",
+    "desc": "Rychell ama hamburguer. Mayara deixa ele feliz. Esse kit garante que o hamburguer artesanal de domingo seja o melhor que já comeram.",
+    "price": 160,
+    "category": "Pra Nós",
+    "imagePrompt": "A gourmet homemade burger as the absolute visual hero — the completed towering burger at center frame, brioche bun gleaming, cheese perfectly melted, Rychell's dream Sunday lunch assembled with artisan care, Mayara's handwritten recipe card propped beside it, editorial food lifestyle photography"
+  },
+  {
+    "id": "happy-hour-casa",
+    "title": "Kit Happy Hour em Casa",
+    "desc": "Caipirinha, moscou mule, soda italiana e smoothie de morango. A casa fica completa com um bar de drinks pra receber com estilo.",
+    "price": 240,
+    "category": "Pra Nós",
+    "imagePrompt": "A home bar tray as the complete visual hero — three drinks in perfect position at center frame: Rychell's caipirinha, Mayara's copper moscow mule, and a sparkling Italian soda — each garnished and backlit to glow, the wooden tray their elegant platform, garden string lights visible behind, editorial lifestyle photography"
+  },
+  {
+    "id": "viagem-casais-brasil",
+    "title": "Viagem de Casal por Cidade Brasileira",
+    "desc": "Explorar o Brasil junto é uma das melhores coisas que existe. Pode ser Recife, Paraty, Gramado — vocês escolhem, a gente contribui.",
+    "price": 800,
+    "category": "Pra Nós",
+    "imagePrompt": "A travel map of Brazil as the visual hero — Recife, Paraty and Gramado marked with small hand-placed pins, Rychell and Mayara's handwritten notes beside each destination, a Brazilian flag bookmark and a camera nearby on the map — their adventure itinerary taking shape, editorial travel planning lifestyle photography"
+  },
+  {
+    "id": "noite-hotel-boutique",
+    "title": "Noite em Hotel Boutique",
+    "desc": "Uma escapada de fim de semana perto de casa. Lugar bonito, bom café da manhã e a sensação de que vocês se escolheram de novo.",
+    "price": 600,
+    "category": "Pra Nós",
+    "badge": "Mais querido",
+    "imagePrompt": "A boutique hotel room as the total visual hero — a beautifully made bed with artisan pillows at center frame, a small balcony door open to a moonlit ocean view, a welcome card reading 'Rychell & Mayara' resting on the pillow, fresh flowers on the bedside table, intimate romantic editorial hotel photography"
   }
 ]

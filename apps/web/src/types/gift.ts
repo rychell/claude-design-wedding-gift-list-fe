@@ -5,4 +5,5 @@ export type Gift = {
   price: number;
   category: string;
   badge?: string;
+  imagePrompt: string;
 };

@@ -8,17 +8,49 @@ import giftsData from "@/data/gifts.json";
 import type { Gift } from "@/types/gift";
 
 const GIFTS = giftsData as Gift[];
-const CATEGORIES = ["Todos", "Lua de mel", "Casa nova", "Pra nós"];
+const CATEGORY_ORDER = [
+  "Todos",
+  "Experiências",
+  "Lua de Mel",
+  "Casa & Jardim",
+  "Para a Mayara",
+  "Para o Rychell",
+  "Praia & Surf",
+  "Música",
+  "Viagem",
+  "Pra Nós",
+];
+const ALL_CATS = new Set(GIFTS.map((g) => g.category));
+const CATEGORIES = CATEGORY_ORDER.filter((c) => c === "Todos" || ALL_CATS.has(c));
+
 type Layout = "grade" | "lista" | "editorial";
+type Sort = "padrao" | "maior-preco" | "menor-preco";
+
+function shuffleArray<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 
 export default function ListaPage() {
   const [activeCategory, setActiveCategory] = useState("Todos");
   const [layout, setLayout] = useState<Layout>("grade");
+  const [sort, setSort] = useState<Sort>("padrao");
+
+  // stable shuffle, computed once on mount
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const shuffledGifts = useMemo(() => shuffleArray(GIFTS), []);
 
   const filtered = useMemo(() => {
-    if (activeCategory === "Todos") return GIFTS;
-    return GIFTS.filter((g) => g.category === activeCategory);
-  }, [activeCategory]);
+    const base = activeCategory === "Todos" && sort === "padrao" ? shuffledGifts : GIFTS;
+    const items = activeCategory === "Todos" ? base : base.filter((g) => g.category === activeCategory);
+    if (sort === "maior-preco") return [...items].sort((a, b) => b.price - a.price);
+    if (sort === "menor-preco") return [...items].sort((a, b) => a.price - b.price);
+    return items;
+  }, [activeCategory, sort, shuffledGifts]);
 
   return (
     <div style={{ position: "relative", minHeight: "100dvh", display: "flex", flexDirection: "column" }}>
@@ -88,6 +120,32 @@ export default function ListaPage() {
             <Pill key={cat} active={activeCategory === cat} onClick={() => setActiveCategory(cat)}>
               {cat}
             </Pill>
+          ))}
+        </div>
+        {/* sort row */}
+        <div style={{ display: "flex", alignItems: "center", gap: 4, marginTop: 10 }}>
+          <span style={{ fontFamily: FONTS.body, fontSize: 11, color: P.inkMuted, flexShrink: 0 }}>
+            Ordenar:
+          </span>
+          {([["padrao", "Padrão"], ["menor-preco", "Menor preço"], ["maior-preco", "Maior preço"]] as [Sort, string][]).map(([val, label]) => (
+            <button
+              key={val}
+              onClick={() => setSort(val)}
+              style={{
+                fontFamily: FONTS.body,
+                fontSize: 11,
+                color: sort === val ? P.accentDeep : P.inkMuted,
+                fontWeight: sort === val ? 600 : 400,
+                background: "none",
+                border: "none",
+                padding: "2px 6px",
+                cursor: "pointer",
+                borderRadius: 6,
+                backgroundColor: sort === val ? P.accent + "18" : "transparent",
+              }}
+            >
+              {label}
+            </button>
           ))}
         </div>
       </div>

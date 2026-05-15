@@ -1,9 +1,51 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { P, FONTS, Botanical, Sprig } from "./primitives";
 import { ImagePlaceholder } from "./image-placeholder";
 import type { Gift } from "@/types/gift";
+
+function GiftImage({
+  id,
+  height,
+  width,
+  radius = 0,
+}: {
+  id: string;
+  height: number;
+  width?: number;
+  radius?: number;
+}) {
+  const [error, setError] = useState(false);
+
+  if (error) {
+    return <ImagePlaceholder width={width} height={height} radius={radius} label={id} />;
+  }
+
+  return (
+    <div
+      style={{
+        position: "relative",
+        width: width ?? "100%",
+        height,
+        borderRadius: radius,
+        overflow: "hidden",
+        flexShrink: 0,
+      }}
+    >
+      <Image
+        src={`/images/${id}.png`}
+        alt={id}
+        fill
+        sizes="(max-width: 600px) 50vw, 300px"
+        style={{ objectFit: "cover" }}
+        onError={() => setError(true)}
+      />
+    </div>
+  );
+}
 
 // ─── SurpreendaCard ───────────────────────────────────────────
 export function SurpreendaCard() {
@@ -121,7 +163,7 @@ export function SurpreendaCard() {
 
 // ─── GiftsGrid (2-column grid) ────────────────────────────────
 export function GiftsGrid({ gifts }: { gifts: Gift[] }) {
-  const items = gifts.slice(0, 6);
+  const items = gifts;
   return (
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
       <div style={{ gridColumn: "1 / -1" }}>
@@ -139,7 +181,7 @@ export function GiftsGrid({ gifts }: { gifts: Gift[] }) {
             }}
           >
             <div style={{ position: "relative" }}>
-              <ImagePlaceholder height={120} radius={10} label={g.id} />
+              <GiftImage id={g.id} height={120} radius={10} />
               {g.badge && (
                 <div
                   style={{
@@ -200,7 +242,7 @@ export function GiftsGrid({ gifts }: { gifts: Gift[] }) {
 
 // ─── GiftsList (horizontal list) ──────────────────────────────
 export function GiftsList({ gifts }: { gifts: Gift[] }) {
-  const items = gifts.slice(0, 5);
+  const items = gifts;
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
       <SurpreendaCard />
@@ -217,7 +259,7 @@ export function GiftsList({ gifts }: { gifts: Gift[] }) {
               alignItems: "center",
             }}
           >
-            <ImagePlaceholder width={86} height={86} radius={8} label={g.id} />
+            <GiftImage id={g.id} width={86} height={86} radius={8} />
             <div style={{ flex: 1, minWidth: 0 }}>
               {g.badge && (
                 <div
@@ -278,14 +320,14 @@ export function GiftsList({ gifts }: { gifts: Gift[] }) {
 
 // ─── GiftsEditorial (large feature style) ─────────────────────
 export function GiftsEditorial({ gifts }: { gifts: Gift[] }) {
-  const items = gifts.slice(0, 3);
+  const items = gifts;
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
       <SurpreendaCard />
       {items.map((g, i) => (
         <Link key={g.id} href={`/lista/${g.id}`} style={{ textDecoration: "none" }}>
           <div>
-            <ImagePlaceholder height={210} radius={14} label={g.id} />
+            <GiftImage id={g.id} height={210} radius={14} />
             <div
               style={{
                 display: "flex",

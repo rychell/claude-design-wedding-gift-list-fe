@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { notFound, useRouter } from "next/navigation";
+import Image from "next/image";
 import { P, FONTS, CapsLine, ButtonPrimary, BackButton } from "@/components/wedding/primitives";
 import { ImagePlaceholder } from "@/components/wedding/image-placeholder";
 import giftsData from "@/data/gifts.json";
@@ -19,13 +20,26 @@ export default function DetalhePage({ params }: { params: Promise<{ id: string }
   const [name, setName] = useState("");
   const [message, setMessage] = useState("Que essa noite seja só o começo de muitas. Amo vocês. ✨");
 
+  const [imgError, setImgError] = useState(false);
+
   if (!gift) return notFound();
 
   return (
     <div style={{ position: "relative", minHeight: "100dvh", display: "flex", flexDirection: "column" }}>
       {/* hero image */}
       <div style={{ position: "relative", height: 360, flexShrink: 0 }}>
-        <ImagePlaceholder width="100%" height={360} label={gift.id} />
+        {imgError ? (
+          <ImagePlaceholder width="100%" height={360} label={gift.id} />
+        ) : (
+          <Image
+            src={`/images/${gift.id}.png`}
+            alt={gift.title}
+            fill
+            sizes="100vw"
+            style={{ objectFit: "cover" }}
+            onError={() => setImgError(true)}
+          />
+        )}
         <div style={{ position: "absolute", top: 60, left: 20 }}>
           <Link href="/lista">
             <BackButton />
@@ -53,7 +67,7 @@ export default function DetalhePage({ params }: { params: Promise<{ id: string }
           {gift.title}
         </h2>
         <p style={{ fontFamily: FONTS.body, fontSize: 13.5, lineHeight: 1.55, color: P.inkSoft, margin: "0 0 18px" }}>
-          {gift.desc} Uma noite que a gente vai contar pros nossos filhos, em algum domingo de chuva, anos depois.
+          {gift.desc}
         </p>
 
         <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
