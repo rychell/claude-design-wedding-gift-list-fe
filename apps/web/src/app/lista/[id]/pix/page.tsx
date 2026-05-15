@@ -148,7 +148,7 @@ export default function PixPage({
           <div style={{ fontFamily: FONTS.body, fontSize: 11, color: P.inkMuted, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 4 }}>
             {pix.keyType}
           </div>
-          <div style={{ fontFamily: FONTS.display, fontSize: 20, color: P.ink, letterSpacing: "0.01em", textAlign: "center", lineHeight: 1.2 }}>
+          <div style={{ fontFamily: FONTS.body, fontSize: 20, color: P.ink, letterSpacing: "0.01em", textAlign: "center", lineHeight: 1.2 }}>
             {pix.key}
           </div>
           <div style={{ fontFamily: FONTS.body, fontSize: 12, color: P.inkSoft, marginTop: 6 }}>
