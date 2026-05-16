@@ -1,9 +1,9 @@
 import dotenv from "dotenv";
 import { defineConfig } from "drizzle-kit";
 
-dotenv.config({
-  path: "../../apps/web/.env",
-});
+// .env.local overrides .env (same precedence as Next.js)
+dotenv.config({ path: "../../apps/web/.env" });
+dotenv.config({ path: "../../apps/web/.env.local", override: true });
 
 export default defineConfig({
   schema: "./src/schema",
@@ -11,5 +11,6 @@ export default defineConfig({
   dialect: "turso",
   dbCredentials: {
     url: process.env.DATABASE_URL || "",
+    authToken: process.env.DATABASE_AUTH_TOKEN,
   },
 });

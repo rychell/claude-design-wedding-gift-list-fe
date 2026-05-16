@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { nanoid } from "nanoid";
-
-const SCRIPT_URL = process.env.GOOGLE_APPS_SCRIPT_URL;
+import { db, convidados } from "@claude-design-wedding-gift-list-fe/db";
 
 type CsvRow = {
   nome: string;
@@ -11,28 +10,34 @@ type CsvRow = {
 };
 
 export async function POST(req: NextRequest) {
-  if (!SCRIPT_URL) {
-    return NextResponse.json({ error: "GOOGLE_APPS_SCRIPT_URL não configurado" }, { status: 503 });
-  }
-
   const body = await req.json() as { rows?: CsvRow[] };
   if (!Array.isArray(body.rows) || body.rows.length === 0) {
     return NextResponse.json({ error: "rows deve ser um array não vazio" }, { status: 400 });
   }
 
-  const rows = body.rows.map((r) => ({
+  const now = new Date().toISOString();
+  const values = body.rows.map((r) => ({
     id: nanoid(8),
     nome: String(r.nome ?? "").trim(),
     convidados: Number(r.convidados),
-    lado: String(r.lado ?? "").toLowerCase().trim(),
+    lado: String(r.lado ?? "").toLowerCase().trim() as "noivo" | "noiva",
     telefone: String(r.telefone ?? "").trim(),
+    confirmado: false as const,
+    ultimaAtualizacao: now,
   }));
 
-  const res = await fetch(SCRIPT_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ action: "importCSV", rows }),
-  });
-  const data = await res.json() as unknown;
-  return NextResponse.json(data);
+  let added = 0;
+  const errors: { row: number; nome: string; error: string }[] = [];
+
+  for (let i = 0; i < values.length; i++) {
+    const v = values[i]!;
+    try {
+      await db.insert(convidados).values(v);
+      added++;
+    } catch (e: unknown) {
+      errors.push({ row: i + 1, nome: v.nome, error: e instanceof Error ? e.message : String(e) });
+    }
+  }
+
+  return NextResponse.json({ added, errors });
 }

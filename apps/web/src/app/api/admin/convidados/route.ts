@@ -1,21 +1,23 @@
 import { NextRequest, NextResponse } from "next/server";
 import { nanoid } from "nanoid";
+import { db, convidados } from "@claude-design-wedding-gift-list-fe/db";
+import { desc, eq } from "drizzle-orm";
+import type { ConvidadoRow } from "@claude-design-wedding-gift-list-fe/db";
+import type { Guest } from "@/lib/rsvp-utils";
 
-const SCRIPT_URL = process.env.GOOGLE_APPS_SCRIPT_URL;
+function rowToGuest(row: ConvidadoRow): Guest {
+  return {
+    ...row,
+    comparecera: row.comparecera === "sim" ? true : row.comparecera === "nao" ? false : null,
+  };
+}
 
 export async function GET() {
-  if (!SCRIPT_URL) {
-    return NextResponse.json({ error: "GOOGLE_APPS_SCRIPT_URL não configurado" }, { status: 503 });
-  }
-  const res = await fetch(`${SCRIPT_URL}?action=listAll`, { cache: "no-store" });
-  const data = await res.json() as unknown;
-  return NextResponse.json(data);
+  const rows = await db.select().from(convidados).orderBy(desc(convidados.ultimaAtualizacao));
+  return NextResponse.json(rows.map(rowToGuest));
 }
 
 export async function POST(req: NextRequest) {
-  if (!SCRIPT_URL) {
-    return NextResponse.json({ error: "GOOGLE_APPS_SCRIPT_URL não configurado" }, { status: 503 });
-  }
   const body = await req.json() as {
     nome?: string;
     convidados?: number;
@@ -30,19 +32,18 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "lado deve ser 'noivo' ou 'noiva'" }, { status: 400 });
   }
 
-  const guest = {
-    id: nanoid(8),
+  const now = new Date().toISOString();
+  const id = nanoid(8);
+  await db.insert(convidados).values({
+    id,
     nome: body.nome.trim(),
     convidados: Number(body.convidados),
-    lado: body.lado,
+    lado: body.lado as "noivo" | "noiva",
     telefone: body.telefone?.trim() ?? "",
-  };
-
-  const res = await fetch(SCRIPT_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ action: "addConvidado", ...guest }),
+    confirmado: false,
+    ultimaAtualizacao: now,
   });
-  const data = await res.json() as unknown;
-  return NextResponse.json(data, { status: 201 });
+
+  const rows = await db.select().from(convidados).where(eq(convidados.id, id)).limit(1);
+  return NextResponse.json(rowToGuest(rows[0]!), { status: 201 });
 }

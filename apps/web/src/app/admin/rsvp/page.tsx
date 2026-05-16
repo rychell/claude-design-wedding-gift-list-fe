@@ -139,17 +139,6 @@ export default function AdminRsvpPage() {
               Importar CSV
             </button>
           </Link>
-          {eventData.sheetsUrl && (
-            <a href={eventData.sheetsUrl} target="_blank" rel="noreferrer" style={{ textDecoration: "none" }}>
-              <button style={{
-                height: 38, padding: "0 18px", borderRadius: 999,
-                background: "transparent", border: `1px solid ${P.line}`,
-                color: P.inkSoft, fontFamily: FONTS.body, fontSize: 12, cursor: "pointer",
-              }}>
-                Ver planilha ↗
-              </button>
-            </a>
-          )}
         </div>
 
         {/* Stats grid */}

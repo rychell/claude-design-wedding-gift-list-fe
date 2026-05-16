@@ -1,30 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
+import { db, config } from "@claude-design-wedding-gift-list-fe/db";
+import { eq } from "drizzle-orm";
 import eventData from "@/data/event.json";
 
-const SCRIPT_URL = process.env.GOOGLE_APPS_SCRIPT_URL;
-
 export async function GET() {
-  if (!SCRIPT_URL) {
-    return NextResponse.json({ template: eventData.rsvp.whatsAppTemplate });
-  }
-  const res = await fetch(`${SCRIPT_URL}?action=getTemplate`, { cache: "no-store" });
-  const data = await res.json() as { template?: string };
-  return NextResponse.json({ template: data.template ?? eventData.rsvp.whatsAppTemplate });
+  const rows = await db.select().from(config).where(eq(config.key, "template")).limit(1);
+  return NextResponse.json({ template: rows[0]?.value ?? eventData.rsvp.whatsAppTemplate });
 }
 
 export async function PUT(req: NextRequest) {
-  if (!SCRIPT_URL) {
-    return NextResponse.json({ error: "GOOGLE_APPS_SCRIPT_URL não configurado" }, { status: 503 });
-  }
   const body = await req.json() as { template?: string };
   if (!body.template?.trim()) {
     return NextResponse.json({ error: "template inválido" }, { status: 400 });
   }
-  const res = await fetch(SCRIPT_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ action: "saveTemplate", template: body.template.trim() }),
-  });
-  const data = await res.json() as unknown;
-  return NextResponse.json(data);
+  await db.insert(config)
+    .values({ key: "template", value: body.template.trim() })
+    .onConflictDoUpdate({ target: config.key, set: { value: body.template.trim() } });
+  return NextResponse.json({ ok: true });
 }
