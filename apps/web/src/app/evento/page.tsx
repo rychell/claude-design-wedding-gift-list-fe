@@ -1,6 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
 import { P, FONTS, CapsLine, MapTile } from "@/components/wedding/primitives";
-import { ImagePlaceholder } from "@/components/wedding/image-placeholder";
 import eventData from "@/data/event.json";
 
 function EventRow({
@@ -44,7 +44,9 @@ export default function EventoPage() {
     <div style={{ position: "relative", minHeight: "100dvh", display: "flex", flexDirection: "column" }}>
       {/* hero */}
       <div style={{ position: "relative" }}>
-        <ImagePlaceholder height={300} label="local do evento" />
+        <div style={{ position: "relative", height: 300, width: "100%" }}>
+          <Image src="/images/local/buffet.png" alt="Local do evento" fill style={{ objectFit: "cover" }} priority />
+        </div>
         <div style={{ position: "absolute", top: 24, left: 20 }}>
           <Link href="/">
             <div style={{
