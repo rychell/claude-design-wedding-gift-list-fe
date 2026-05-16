@@ -15,7 +15,9 @@
     "db:studio": "npm run db:studio --workspace @claude-design-wedding-gift-list-fe/db",
     "db:generate": "npm run db:generate --workspace @claude-design-wedding-gift-list-fe/db",
     "db:migrate": "npm run db:migrate --workspace @claude-design-wedding-gift-list-fe/db",
-    "db:local": "npm run db:local --workspace @claude-design-wedding-gift-list-fe/db"
+    "db:local": "npm run db:local --workspace @claude-design-wedding-gift-list-fe/db",
+    "generate:images": "node scripts/generate-images.mjs",
+    "generate:image": "node scripts/generate-images.mjs"
   },
   "dependencies": {
     "@claude-design-wedding-gift-list-fe/env": "*",
@@ -24,6 +26,7 @@
   },
   "devDependencies": {
     "@claude-design-wedding-gift-list-fe/config": "*",
+    "@google/generative-ai": "^0.24.1",
     "@types/node": "^22.13.14",
     "typescript": "^6"
   },

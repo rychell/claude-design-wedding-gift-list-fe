@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
-import { useState, useMemo } from "react";
+import { Suspense, useMemo, useCallback } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import { P, FONTS, Monogram, CapsLine, Pill } from "@/components/wedding/primitives";
 import { GiftsGrid, GiftsList, GiftsEditorial } from "@/components/wedding/gift-cards";
 import giftsData from "@/data/gifts.json";
@@ -9,9 +9,8 @@ import type { Gift } from "@/types/gift";
 
 const GIFTS = giftsData as Gift[];
 const CATEGORY_ORDER = [
-  "Todos",
-  "Experiências",
   "Lua de Mel",
+  "Experiências",
   "Casa & Jardim",
   "Para a Mayara",
   "Para o Rychell",
@@ -19,6 +18,7 @@ const CATEGORY_ORDER = [
   "Música",
   "Viagem",
   "Pra Nós",
+  "Todos",
 ];
 const ALL_CATS = new Set(GIFTS.map((g) => g.category));
 const CATEGORIES = CATEGORY_ORDER.filter((c) => c === "Todos" || ALL_CATS.has(c));
@@ -35,22 +35,44 @@ function shuffleArray<T>(arr: T[]): T[] {
   return a;
 }
 
-export default function ListaPage() {
-  const [activeCategory, setActiveCategory] = useState("Todos");
-  const [layout, setLayout] = useState<Layout>("grade");
-  const [sort, setSort] = useState<Sort>("padrao");
+// stable shuffle at module level
+const SHUFFLED_GIFTS = shuffleArray(GIFTS);
 
-  // stable shuffle, computed once on mount
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const shuffledGifts = useMemo(() => shuffleArray(GIFTS), []);
+const DEFAULTS = { cat: "Todos", layout: "lista", sort: "menor-preco" } as const;
+
+function ListaContent() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  const activeCategory = searchParams.get("cat") ?? DEFAULTS.cat;
+  const layout = (searchParams.get("layout") as Layout) ?? DEFAULTS.layout;
+  const sort = (searchParams.get("sort") as Sort) ?? DEFAULTS.sort;
+
+  const setParam = useCallback(
+    (key: string, value: string) => {
+      const params = new URLSearchParams(searchParams.toString());
+      if (value === DEFAULTS[key as keyof typeof DEFAULTS]) {
+        params.delete(key);
+      } else {
+        params.set(key, value);
+      }
+      const qs = params.toString();
+      router.replace(qs ? `?${qs}` : "?", { scroll: false });
+    },
+    [searchParams, router]
+  );
+
+  const setActiveCategory = (cat: string) => setParam("cat", cat);
+  const setLayout = (l: Layout) => setParam("layout", l);
+  const setSort = (s: Sort) => setParam("sort", s);
 
   const filtered = useMemo(() => {
-    const base = activeCategory === "Todos" && sort === "padrao" ? shuffledGifts : GIFTS;
+    const base = activeCategory === "Todos" && sort === "padrao" ? SHUFFLED_GIFTS : GIFTS;
     const items = activeCategory === "Todos" ? base : base.filter((g) => g.category === activeCategory);
     if (sort === "maior-preco") return [...items].sort((a, b) => b.price - a.price);
     if (sort === "menor-preco") return [...items].sort((a, b) => a.price - b.price);
     return items;
-  }, [activeCategory, sort, shuffledGifts]);
+  }, [activeCategory, sort]);
 
   return (
     <div style={{ position: "relative", minHeight: "100dvh", display: "flex", flexDirection: "column" }}>
@@ -114,8 +136,8 @@ export default function ListaPage() {
             Escolha um presente simbólico — cada um nos ajuda a construir um pedacinho dessa vida nova.
           </p>
         </div>
-        {/* category pills */}
-        <div style={{ display: "flex", gap: 6, marginTop: 18, overflowX: "auto", paddingBottom: 2 }}>
+        {/* category pills — wrap instead of horizontal scroll */}
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 18 }}>
           {CATEGORIES.map((cat) => (
             <Pill key={cat} active={activeCategory === cat} onClick={() => setActiveCategory(cat)}>
               {cat}
@@ -157,5 +179,13 @@ export default function ListaPage() {
         {layout === "editorial" && <GiftsEditorial gifts={filtered} />}
       </div>
     </div>
+  );
+}
+
+export default function ListaPage() {
+  return (
+    <Suspense>
+      <ListaContent />
+    </Suspense>
   );
 }

@@ -1,7 +1,15 @@
 import Link from "next/link";
+import Image from "next/image";
 import { P, FONTS, Monogram, CapsLine, IconButton } from "@/components/wedding/primitives";
 import { ImagePlaceholder } from "@/components/wedding/image-placeholder";
 import eventData from "@/data/event.json";
+
+const TIMELINE_IMAGES: (string | null)[] = [
+  "/images/historia-casal/1.png",
+  "/images/historia-casal/2.png",
+  "/images/historia-casal/3.png",
+  null,
+];
 
 export default function HistoriaPage() {
   const { timeline } = eventData;
@@ -48,7 +56,19 @@ export default function HistoriaPage() {
                 <div style={{ fontFamily: FONTS.display, fontSize: 22, fontWeight: 400, color: P.ink, margin: "4px 0 6px", lineHeight: 1.15 }}>
                   {m.title}
                 </div>
-                <ImagePlaceholder height={110} radius={10} label={`foto ${i + 1}`} style={{ marginBottom: 10 }} />
+                {TIMELINE_IMAGES[i] ? (
+                  <div style={{ position: "relative", width: "100%", height: 180, borderRadius: 10, overflow: "hidden", marginBottom: 10 }}>
+                    <Image
+                      src={TIMELINE_IMAGES[i]!}
+                      alt={m.title}
+                      fill
+                      style={{ objectFit: "cover", objectPosition: "center top" }}
+                      sizes="(max-width: 600px) 100vw, 500px"
+                    />
+                  </div>
+                ) : (
+                  <ImagePlaceholder height={180} radius={10} label="foto do casamento" style={{ marginBottom: 10 }} />
+                )}
                 <div style={{
                   fontFamily: FONTS.mono, fontSize: 11, color: P.inkMuted,
                   padding: "6px 0", borderTop: `1px dashed ${P.line}`, borderBottom: `1px dashed ${P.line}`,
