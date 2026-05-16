@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { P, FONTS, Monogram, CapsLine, ButtonPrimary, Botanical, IconButton } from "@/components/wedding/primitives";
+import { P, FONTS, Monogram, CapsLine, ButtonPrimary, Botanical, IconButton, SpinnerInline } from "@/components/wedding/primitives";
 
 const QUICK_VALUES = [50, 100, 150, 250, 500];
 
@@ -158,7 +158,7 @@ export default function SurpresaPage() {
           style={{ marginTop: 16, opacity: (!isValid || saving) ? 0.45 : 1 }}
           onClick={handlePresentear}
         >
-          {saving ? "Salvando…" : `Presentear · R$ ${numericValue || "—"}`}
+          {saving ? <SpinnerInline /> : `Presentear · R$ ${numericValue || "—"}`}
         </ButtonPrimary>
       </div>
     </div>

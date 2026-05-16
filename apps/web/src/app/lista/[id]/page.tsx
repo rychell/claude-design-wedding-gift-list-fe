@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { notFound, useRouter } from "next/navigation";
 import Image from "next/image";
-import { P, FONTS, CapsLine, ButtonPrimary, BackButton } from "@/components/wedding/primitives";
+import { P, FONTS, CapsLine, ButtonPrimary, BackButton, SpinnerInline } from "@/components/wedding/primitives";
 import { ImagePlaceholder } from "@/components/wedding/image-placeholder";
 import giftsData from "@/data/gifts.json";
 import type { Gift } from "@/types/gift";
@@ -18,7 +18,7 @@ export default function DetalhePage({ params }: { params: Promise<{ id: string }
   const router = useRouter();
   const [identify, setIdentify] = useState(false);
   const [name, setName] = useState("");
-  const [message, setMessage] = useState("Que essa noite seja só o começo de muitas. Amo vocês. ✨");
+  const [message, setMessage] = useState("");
 
   const [imgError, setImgError] = useState(false);
   const [saving, setSaving] = useState(false);
@@ -152,7 +152,7 @@ export default function DetalhePage({ params }: { params: Promise<{ id: string }
           style={{ marginTop: 16, opacity: saving ? 0.6 : 1 }}
           onClick={handlePresentear}
         >
-          {saving ? "Salvando…" : `Presentear · R$ ${gift.price}`}
+          {saving ? <SpinnerInline /> : `Presentear · R$ ${gift.price}`}
         </ButtonPrimary>
       </div>
     </div>

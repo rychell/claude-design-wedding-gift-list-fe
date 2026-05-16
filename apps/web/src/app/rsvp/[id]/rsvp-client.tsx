@@ -5,10 +5,10 @@ import Link from "next/link";
 import type { Guest } from "@/lib/rsvp-utils";
 import { formatDateShort } from "@/lib/rsvp-utils";
 import { CheckMedallion } from "@/components/wedding/rsvp-primitives";
-import { P, FONTS, GoldRule, CapsLine, ButtonPrimary, Monogram, Botanical } from "@/components/wedding/primitives";
+import { P, FONTS, GoldRule, CapsLine, ButtonPrimary, Monogram, Botanical, SpinnerInline } from "@/components/wedding/primitives";
 import eventData from "@/data/event.json";
 
-type Screen = "choice" | "loading" | "confirmed" | "declined" | "error";
+type Screen = "choice" | "confirmed" | "declined" | "error";
 
 function initialScreen(guest: Guest): Screen {
   if (!guest.confirmado) return "choice";
@@ -30,15 +30,19 @@ async function responder(id: string, comparecera: boolean): Promise<Guest> {
 export function RsvpClient({ guest: initialGuest }: { guest: Guest }) {
   const [guest, setGuest] = useState<Guest>(initialGuest);
   const [screen, setScreen] = useState<Screen>(initialScreen(initialGuest));
+  const [loading, setLoading] = useState<"sim" | "nao" | null>(null);
 
   async function handleChoice(comparecera: boolean) {
-    setScreen("loading");
+    if (loading) return;
+    setLoading(comparecera ? "sim" : "nao");
     try {
       const updated = await responder(guest.id, comparecera);
       setGuest(updated);
       setScreen(comparecera ? "confirmed" : "declined");
     } catch {
       setScreen("error");
+    } finally {
+      setLoading(null);
     }
   }
 
@@ -110,28 +114,21 @@ export function RsvpClient({ guest: initialGuest }: { guest: Guest }) {
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            <div onClick={() => void handleChoice(true)} style={{ cursor: "pointer" }}>
-              <ButtonPrimary>Confirmar presença 💛</ButtonPrimary>
+            <div
+              onClick={() => void handleChoice(true)}
+              style={{ cursor: loading ? "default" : "pointer", opacity: loading === "nao" ? 0.4 : 1, transition: "opacity 0.2s" }}
+            >
+              <ButtonPrimary>{loading === "sim" ? <SpinnerInline /> : "Confirmar presença 💛"}</ButtonPrimary>
             </div>
-            <div onClick={() => void handleChoice(false)} style={{ cursor: "pointer" }}>
-              <ButtonPrimary subtle>Não conseguirei ir</ButtonPrimary>
+            <div
+              onClick={() => void handleChoice(false)}
+              style={{ cursor: loading ? "default" : "pointer", opacity: loading === "sim" ? 0.4 : 1, transition: "opacity 0.2s" }}
+            >
+              <ButtonPrimary subtle>{loading === "nao" ? <SpinnerInline color={P.accent} /> : "Não conseguirei ir"}</ButtonPrimary>
             </div>
           </div>
         </div>
         <Footer />
-      </Wrapper>
-    );
-  }
-
-  // ── Carregando ───────────────────────────────────────────────
-  if (screen === "loading") {
-    return (
-      <Wrapper>
-        <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <div style={{ fontFamily: FONTS.display, fontSize: 18, color: P.inkMuted, letterSpacing: "0.1em" }}>
-            Registrando…
-          </div>
-        </div>
       </Wrapper>
     );
   }

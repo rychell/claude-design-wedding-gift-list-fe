@@ -159,6 +159,20 @@ export function CapsLine({
   );
 }
 
+// ─── SpinnerInline ───────────────────────────────────────────
+export function SpinnerInline({ color = "#fff" }: { color?: string }) {
+  return (
+    <svg width="20" height="20" viewBox="0 0 20 20">
+      <circle cx="10" cy="10" r="7" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" fill="none" />
+      <circle cx="10" cy="10" r="7" stroke={color} strokeWidth="1.5" fill="none"
+        strokeLinecap="round" strokeDasharray="11 33">
+        <animateTransform attributeName="transform" type="rotate"
+          from="0 10 10" to="360 10 10" dur="1s" repeatCount="indefinite" />
+      </circle>
+    </svg>
+  );
+}
+
 // ─── ButtonPrimary ────────────────────────────────────────────
 export function ButtonPrimary({
   children,
