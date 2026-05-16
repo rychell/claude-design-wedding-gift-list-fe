@@ -1,5 +1,18 @@
 import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
+export const contribuicoes = sqliteTable("contribuicoes", {
+  id:         text("id").primaryKey(),
+  giftId:     text("gift_id"),
+  isSurpresa: integer("is_surpresa", { mode: "boolean" }).default(false).notNull(),
+  valor:      integer("valor").notNull(),
+  nome:       text("nome"),
+  mensagem:   text("mensagem"),
+  criadoEm:   text("criado_em").notNull(),
+});
+
+export type ContribuicaoRow = typeof contribuicoes.$inferSelect;
+export type ContribuicaoInsert = typeof contribuicoes.$inferInsert;
+
 export const convidados = sqliteTable("convidados", {
   id:                    text("id").primaryKey(),
   nome:                  text("nome").notNull(),

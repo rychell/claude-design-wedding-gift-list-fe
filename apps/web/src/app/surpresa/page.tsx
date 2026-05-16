@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useRef } from "react";
+import { useRouter } from "next/navigation";
 import { P, FONTS, Monogram, CapsLine, ButtonPrimary, Botanical, IconButton } from "@/components/wedding/primitives";
 
 const QUICK_VALUES = [50, 100, 150, 250, 500];
@@ -12,8 +13,30 @@ export default function SurpresaPage() {
   const [message, setMessage] = useState("Que esse comecinho de vida a dois seja como vocês — gentil e divertido.");
   const inputRef = useRef<HTMLInputElement>(null);
 
+  const router = useRouter();
   const numericValue = selected === "outro" ? (parseInt(customValue) || 0) : selected;
   const isValid = selected !== "outro" || (parseInt(customValue) > 0);
+  const [saving, setSaving] = useState(false);
+
+  async function handlePresentear() {
+    if (!isValid || saving) return;
+    setSaving(true);
+    try {
+      await fetch("/api/contribuicoes", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          isSurpresa: true,
+          valor: numericValue,
+          nome: null,
+          mensagem: message.trim() || null,
+        }),
+      });
+    } catch {
+      // não bloquear navegação por falha no registro
+    }
+    router.push(`/surpresa/confirmar?valor=${numericValue}`);
+  }
 
   return (
     <div style={{ position: "relative", minHeight: "100dvh", display: "flex", flexDirection: "column" }}>
@@ -131,15 +154,12 @@ export default function SurpresaPage() {
         </div>
 
         <div style={{ flex: 1 }} />
-        <Link
-          href={isValid ? `/surpresa/confirmar?valor=${numericValue}` : "#"}
-          style={{ textDecoration: "none", pointerEvents: isValid ? "auto" : "none" }}
-          onClick={(e) => { if (!isValid) e.preventDefault(); }}
+        <ButtonPrimary
+          style={{ marginTop: 16, opacity: (!isValid || saving) ? 0.45 : 1 }}
+          onClick={handlePresentear}
         >
-          <ButtonPrimary style={{ marginTop: 16, opacity: isValid ? 1 : 0.45 }}>
-            Presentear · R$ {numericValue || "—"}
-          </ButtonPrimary>
-        </Link>
+          {saving ? "Salvando…" : `Presentear · R$ ${numericValue || "—"}`}
+        </ButtonPrimary>
       </div>
     </div>
   );

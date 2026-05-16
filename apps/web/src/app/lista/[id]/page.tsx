@@ -21,8 +21,29 @@ export default function DetalhePage({ params }: { params: Promise<{ id: string }
   const [message, setMessage] = useState("Que essa noite seja só o começo de muitas. Amo vocês. ✨");
 
   const [imgError, setImgError] = useState(false);
+  const [saving, setSaving] = useState(false);
 
   if (!gift) return notFound();
+
+  async function handlePresentear() {
+    if (!gift || saving) return;
+    setSaving(true);
+    try {
+      await fetch("/api/contribuicoes", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          giftId: gift.id,
+          valor: gift.price,
+          nome: identify ? name.trim() || null : null,
+          mensagem: identify ? message.trim() || null : null,
+        }),
+      });
+    } catch {
+      // não bloquear navegação por falha no registro
+    }
+    router.push(`/lista/${gift.id}/confirmar?nome=${encodeURIComponent(identify ? name : "")}`);
+  }
 
   return (
     <div style={{ position: "relative", minHeight: "100dvh", display: "flex", flexDirection: "column" }}>
@@ -127,9 +148,12 @@ export default function DetalhePage({ params }: { params: Promise<{ id: string }
         </div>
 
         <div style={{ flex: 1 }} />
-        <Link href={`/lista/${gift.id}/confirmar?nome=${encodeURIComponent(name)}`} style={{ textDecoration: "none" }}>
-          <ButtonPrimary style={{ marginTop: 16 }}>Presentear · R$ {gift.price}</ButtonPrimary>
-        </Link>
+        <ButtonPrimary
+          style={{ marginTop: 16, opacity: saving ? 0.6 : 1 }}
+          onClick={handlePresentear}
+        >
+          {saving ? "Salvando…" : `Presentear · R$ ${gift.price}`}
+        </ButtonPrimary>
       </div>
     </div>
   );
