@@ -127,6 +127,12 @@ export function RsvpClient({ guest: initialGuest }: { guest: Guest }) {
               <ButtonPrimary subtle>{loading === "nao" ? <SpinnerInline color={P.accent} /> : "Não conseguirei ir"}</ButtonPrimary>
             </div>
           </div>
+
+          <GoldRule style={{ marginTop: 28, marginBottom: 20 }} />
+
+          <Link href="/lista" style={{ textDecoration: "none" }}>
+            <ButtonPrimary subtle>Ver lista de presentes 🎁</ButtonPrimary>
+          </Link>
         </div>
         <Footer />
       </Wrapper>
