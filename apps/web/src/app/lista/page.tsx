@@ -38,7 +38,7 @@ function shuffleArray<T>(arr: T[]): T[] {
 // stable shuffle at module level
 const SHUFFLED_GIFTS = shuffleArray(GIFTS);
 
-const DEFAULTS = { cat: "Todos", layout: "lista", sort: "menor-preco" } as const;
+const DEFAULTS = { cat: "Todos", layout: "lista", sort: "padrao" } as const;
 
 function ListaContent() {
   const searchParams = useSearchParams();
