@@ -6,4 +6,5 @@ export type Gift = {
   category: string;
   badge?: string;
   imagePrompt: string;
+  outOfStock?: boolean;
 };

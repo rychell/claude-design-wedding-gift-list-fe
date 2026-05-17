@@ -51,6 +51,40 @@ function GiftImage({
   );
 }
 
+function OutOfStockOverlay({ radius = 0 }: { radius?: number }) {
+  return (
+    <div
+      style={{
+        position: "absolute",
+        inset: 0,
+        borderRadius: radius,
+        background: "rgba(42,37,32,0.58)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        zIndex: 1,
+      }}
+    >
+      <span
+        style={{
+          fontFamily: FONTS.body,
+          fontSize: 10,
+          fontWeight: 700,
+          letterSpacing: "0.22em",
+          textTransform: "uppercase",
+          color: "#fff",
+          background: "rgba(42,37,32,0.45)",
+          padding: "5px 10px",
+          borderRadius: 999,
+          border: "1px solid rgba(255,255,255,0.3)",
+        }}
+      >
+        Esgotado
+      </span>
+    </div>
+  );
+}
+
 // ─── SurpreendaCard ───────────────────────────────────────────
 export function SurpreendaCard() {
   return (
@@ -182,11 +216,13 @@ export function GiftsGrid({ gifts }: { gifts: Gift[] }) {
               padding: 10,
               border: `1px solid ${P.line}`,
               height: "100%",
+              opacity: g.outOfStock ? 0.72 : 1,
             }}
           >
             <div style={{ position: "relative" }}>
               <GiftImage id={g.id} height={120} radius={10} priority={i < 2} />
-              {g.badge && (
+              {g.outOfStock && <OutOfStockOverlay radius={10} />}
+              {g.badge && !g.outOfStock && (
                 <div
                   style={{
                     position: "absolute",
@@ -213,7 +249,7 @@ export function GiftsGrid({ gifts }: { gifts: Gift[] }) {
                   fontFamily: FONTS.display,
                   fontSize: 17,
                   lineHeight: 1.15,
-                  color: P.ink,
+                  color: g.outOfStock ? P.inkMuted : P.ink,
                   fontWeight: 400,
                 }}
               >
@@ -228,13 +264,21 @@ export function GiftsGrid({ gifts }: { gifts: Gift[] }) {
                 }}
               >
                 <span
-                  style={{ fontFamily: FONTS.body, fontSize: 13, fontWeight: 600, color: P.accentDeep }}
+                  style={{
+                    fontFamily: FONTS.body,
+                    fontSize: 13,
+                    fontWeight: 600,
+                    color: g.outOfStock ? P.inkMuted : P.accentDeep,
+                    textDecoration: g.outOfStock ? "line-through" : "none",
+                  }}
                 >
                   R$ {g.price}
                 </span>
-                <span style={{ fontFamily: FONTS.body, fontSize: 10, color: P.inkMuted, letterSpacing: "0.06em" }}>
-                  →
-                </span>
+                {!g.outOfStock && (
+                  <span style={{ fontFamily: FONTS.body, fontSize: 10, color: P.inkMuted, letterSpacing: "0.06em" }}>
+                    →
+                  </span>
+                )}
               </div>
             </div>
           </div>
@@ -261,11 +305,15 @@ export function GiftsList({ gifts }: { gifts: Gift[] }) {
               padding: 10,
               border: `1px solid ${P.line}`,
               alignItems: "center",
+              opacity: g.outOfStock ? 0.72 : 1,
             }}
           >
-            <GiftImage id={g.id} width={86} height={86} radius={8} priority={i === 0} />
+            <div style={{ position: "relative", flexShrink: 0 }}>
+              <GiftImage id={g.id} width={86} height={86} radius={8} priority={i === 0} />
+              {g.outOfStock && <OutOfStockOverlay radius={8} />}
+            </div>
             <div style={{ flex: 1, minWidth: 0 }}>
-              {g.badge && (
+              {g.badge && !g.outOfStock && (
                 <div
                   style={{
                     fontFamily: FONTS.display,
@@ -284,7 +332,7 @@ export function GiftsList({ gifts }: { gifts: Gift[] }) {
                   fontFamily: FONTS.display,
                   fontSize: 17,
                   fontWeight: 400,
-                  color: P.ink,
+                  color: g.outOfStock ? P.inkMuted : P.ink,
                   lineHeight: 1.15,
                 }}
               >
@@ -309,7 +357,8 @@ export function GiftsList({ gifts }: { gifts: Gift[] }) {
                   fontFamily: FONTS.body,
                   fontSize: 13,
                   fontWeight: 600,
-                  color: P.accentDeep,
+                  color: g.outOfStock ? P.inkMuted : P.accentDeep,
+                  textDecoration: g.outOfStock ? "line-through" : "none",
                 }}
               >
                 R$ {g.price}
@@ -330,8 +379,11 @@ export function GiftsEditorial({ gifts }: { gifts: Gift[] }) {
       <SurpreendaCard />
       {items.map((g, i) => (
         <Link key={g.id} href={`/lista/${g.id}`} style={{ textDecoration: "none" }}>
-          <div>
-            <GiftImage id={g.id} height={210} radius={14} priority={i === 0} />
+          <div style={{ opacity: g.outOfStock ? 0.72 : 1 }}>
+            <div style={{ position: "relative" }}>
+              <GiftImage id={g.id} height={210} radius={14} priority={i === 0} />
+              {g.outOfStock && <OutOfStockOverlay radius={14} />}
+            </div>
             <div
               style={{
                 display: "flex",
@@ -358,7 +410,7 @@ export function GiftsEditorial({ gifts }: { gifts: Gift[] }) {
                     fontFamily: FONTS.display,
                     fontSize: 26,
                     fontWeight: 400,
-                    color: P.ink,
+                    color: g.outOfStock ? P.inkMuted : P.ink,
                     lineHeight: 1.1,
                     marginTop: 4,
                   }}
@@ -384,12 +436,18 @@ export function GiftsEditorial({ gifts }: { gifts: Gift[] }) {
                     fontSize: 11,
                     letterSpacing: "0.22em",
                     color: P.inkMuted,
+                    textDecoration: g.outOfStock ? "line-through" : "none",
                   }}
                 >
                   R$
                 </div>
                 <div
-                  style={{ fontFamily: FONTS.display, fontSize: 28, color: P.accentDeep }}
+                  style={{
+                    fontFamily: FONTS.display,
+                    fontSize: 28,
+                    color: g.outOfStock ? P.inkMuted : P.accentDeep,
+                    textDecoration: g.outOfStock ? "line-through" : "none",
+                  }}
                 >
                   {g.price}
                 </div>

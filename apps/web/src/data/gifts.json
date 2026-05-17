@@ -39,6 +39,7 @@
     "desc": "A casa já tem plantas, mas sempre tem espaço pra mais. Afinal, cada planta tem uma personalidade e a Mayara conhece todas pelo nome.",
     "price": 150,
     "category": "Casa & Jardim",
+    "outOfStock": true,
     "imagePrompt": "Hero display of a lush tropical houseplant collection — monstera, pothos, bird of paradise, alocasia — each in individual terracotta pots with small handwritten name tags in Mayara's handwriting, arranged on wooden shelves in a bright boho-coastal home, soft natural window light, the plants as the undeniable stars"
   },
   {
@@ -136,6 +137,7 @@
     "desc": "A casa tem plantas, mas falta aquela planta de canto — dramática e majestosa. Esse vaso é pra ela. A planta você escolhe com carinho.",
     "price": 160,
     "category": "Casa & Jardim",
+    "outOfStock": true,
     "imagePrompt": "A large sculptural ceramic plant pot as the absolute visual hero — standing prominently at center, a dramatic fiddle leaf fig rising majestically from it, the pot's earthenware texture and form in sharp focus, warm boho-coastal decor softly framing it, the pot commanding the corner of the room, lifestyle interior editorial photography"
   },
   {
@@ -242,6 +244,7 @@
     "desc": "Como no crossfit, a solução é trabalhar em equipe. Quem resolve o enigma em dupla fica mais forte junto. Provado por especialistas.",
     "price": 160,
     "category": "Experiências",
+    "outOfStock": true,
     "imagePrompt": "A dramatic escape room puzzle board as the absolute visual hero — ciphers, clues, locked boxes and maps pinned at center frame, two pairs of hands reaching in from opposite sides — Rychell and Mayara's teamwork at its peak — a single spotlight illuminating the puzzle dramatically, mystery atmosphere, lifestyle editorial photography"
   },
   {
@@ -331,6 +334,7 @@
     "desc": "Porque o primeiro café da manhã como casados precisa ser à altura. Frutas, croissant, suco e vista pro mar, no mínimo.",
     "price": 120,
     "category": "Lua de Mel",
+    "outOfStock": true,
     "imagePrompt": "A luxurious honeymoon breakfast tray as the absolute visual hero — stacked high with tropical fruits, warm pastries and a coffee glowing in morning light, the tray presented on crisp white linen sheets at center frame, the ocean visible in glorious soft focus beyond the window — Rychell and Mayara's first morning as husband and wife, romantic editorial photography"
   },
   {
@@ -379,6 +383,7 @@
     "desc": "Para começar a lua de mel com o pé direito, sem stress de táxi ou fila de ônibus carregando mala.",
     "price": 150,
     "category": "Lua de Mel",
+    "outOfStock": true,
     "imagePrompt": "A premium private car door opening at an airport curb as the visual hero — white leather interior glowing, a welcome sign reading 'Rychell & Mayara' visible on the seat, their luggage stacked neatly nearby, a honeymoon journey officially beginning, warm sunset light from beyond the terminal, editorial travel photography"
   },
   {
@@ -436,6 +441,7 @@
     "desc": "Para levar tudo na praia sem o drama de a areia entrar em tudo. A Mayara agradece, a prancha do Rychell também.",
     "price": 160,
     "category": "Praia & Surf",
+    "outOfStock": true,
     "imagePrompt": "A stylish waterproof beach bag as the complete visual hero — open at center frame, Mayara's sunscreen, a book and Rychell's surf wax peeking out in perfect arrangement, the bag standing on a bright wooden deck, ocean horizon in the background, practical and beautiful, editorial beach lifestyle photography"
   },
   {
@@ -444,6 +450,7 @@
     "desc": "Com tanta praia na agenda, protetor solar não é opcional. É um investimento na pele saudável por muitos anos de surf pela frente.",
     "price": 120,
     "category": "Praia & Surf",
+    "outOfStock": true,
     "imagePrompt": "A premium sunscreen collection as the visual hero — tubes and bottles arranged in a precise row on a sandy surface, each label in sharp focus at center frame, the ocean sparkling behind, Rychell's surfboard fin visible at one edge — protection for years of beach adventures ahead, natural lifestyle editorial photography"
   },
   {
@@ -540,6 +547,7 @@
     "desc": "Pra quando o plano Europa finalmente sair do papel. E vai sair, a gente sabe. Guardada com carinho até lá.",
     "price": 80,
     "category": "Viagem",
+    "outOfStock": true,
     "imagePrompt": "A ceramic Rome travel mug as the undeniable visual hero — the Colosseum illustration in crisp close-up focus at center frame, a tiny espresso beside it, a folded map of Italy beneath — Rychell and Mayara's European dream growing more tangible every day, warm travel planning editorial photography"
   },
   {
@@ -548,6 +556,7 @@
     "desc": "Torre Eiffel, croissant, café e a Mayara tirando foto de tudo. O Rychell tentando fazer o mesmo com a câmera nova.",
     "price": 80,
     "category": "Viagem",
+    "outOfStock": true,
     "imagePrompt": "A ceramic Paris travel mug as the visual hero — the Eiffel Tower illustration glowing at center frame, a croissant resting beside it, Mayara's camera strap draped casually over the mug handle — ready for her to photograph everything — the dream of Paris almost tangible, editorial travel lifestyle photography"
   },
   {
@@ -556,6 +565,7 @@
     "desc": "A praia mais famosa do Sul espera por vocês. A caneca vai servir pro café da manhã antes de ir pra água.",
     "price": 60,
     "category": "Viagem",
+    "outOfStock": true,
     "imagePrompt": "A ceramic Florianópolis travel mug as the visual hero — the beach illustration in sharp focus at center, the mug sitting on a bright beach towel with ocean waves blurring beautifully behind it — Rychell and Mayara's next Brazilian adventure calling, editorial travel lifestyle photography"
   },
   {
@@ -589,6 +599,7 @@
     "desc": "Para quando a Europa chegar, não ficar sem internet tentando achar a gelateria mais próxima. Prioridade máxima.",
     "price": 90,
     "category": "Viagem",
+    "outOfStock": true,
     "imagePrompt": "A travel SIM card held up against a window as the visual hero — a European cityscape visible through it, the card in sharp focus at center frame, a passport and boarding pass beneath, Rychell and Mayara's connectivity for finding the nearest gelateria secured, editorial travel lifestyle photography"
   },
   {
@@ -597,6 +608,7 @@
     "desc": "A coleção já começou. Ela precisa de um lugar bonito pra ficar. Afinal, caneca guardada na caixa não conta como coleção.",
     "price": 140,
     "category": "Viagem",
+    "outOfStock": true,
     "imagePrompt": "A wall-mounted wooden mug rack as the absolute visual hero — Rychell and Mayara's growing travel souvenir collection displayed beautifully, Roma, Paris and Florianópolis mugs among others, each mug's unique glazes catching warm kitchen light, the rack as a map of their shared adventures, editorial home decor photography"
   },
   {
@@ -694,6 +706,7 @@
     "desc": "Para criar sem medo de manchar. Um avental bonito faz parte do ritual do ateliê. A arte começa antes de pegar o pincel.",
     "price": 120,
     "category": "Para a Mayara",
+    "outOfStock": true,
     "imagePrompt": "A premium canvas artist apron as the visual hero — hanging from Mayara's easel at center frame, paint streaks and color marks telling the rich story of work already done, her brushes in the front pocket ready, a fresh canvas waiting behind it, the apron as the emblem of her creative practice, editorial art studio photography"
   },
   {
@@ -782,6 +795,7 @@
     "desc": "Rychell ama hamburguer. Mayara deixa ele feliz. Esse kit garante que o hamburguer artesanal de domingo seja o melhor que já comeram.",
     "price": 160,
     "category": "Pra Nós",
+    "outOfStock": true,
     "imagePrompt": "A gourmet homemade burger as the absolute visual hero — the completed towering burger at center frame, brioche bun gleaming, cheese perfectly melted, Rychell's dream Sunday lunch assembled with artisan care, Mayara's handwritten recipe card propped beside it, editorial food lifestyle photography"
   },
   {

@@ -66,7 +66,17 @@ export default function DetalhePage({ params }: { params: Promise<{ id: string }
             <BackButton />
           </Link>
         </div>
-        {gift.badge && (
+        {gift.outOfStock && (
+          <div style={{
+            position: "absolute", top: 60, right: 20,
+            background: "rgba(90,60,50,0.82)", padding: "6px 12px", borderRadius: 999,
+            fontFamily: FONTS.body, fontSize: 10, letterSpacing: "0.18em",
+            textTransform: "uppercase", color: "#fff", fontWeight: 700,
+          }}>
+            Esgotado
+          </div>
+        )}
+        {gift.badge && !gift.outOfStock && (
           <div style={{
             position: "absolute", top: 60, right: 20,
             background: "rgba(255,255,255,0.92)", padding: "6px 12px", borderRadius: 999,
@@ -93,67 +103,110 @@ export default function DetalhePage({ params }: { params: Promise<{ id: string }
 
         <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
           <span style={{ fontFamily: FONTS.display, fontSize: 14, color: P.inkSoft }}>R$</span>
-          <span style={{ fontFamily: FONTS.display, fontSize: 44, color: P.ink, fontWeight: 400, lineHeight: 1 }}>{gift.price}</span>
+          <span style={{
+            fontFamily: FONTS.display, fontSize: 44, fontWeight: 400, lineHeight: 1,
+            color: gift.outOfStock ? P.inkMuted : P.ink,
+            textDecoration: gift.outOfStock ? "line-through" : "none",
+          }}>
+            {gift.price}
+          </span>
         </div>
 
-        {/* identify toggle */}
-        <div style={{ marginTop: 18, padding: "14px 16px", borderRadius: 14, background: P.surface, border: `1px solid ${P.line}` }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-            <div>
-              <div style={{ fontFamily: FONTS.body, fontSize: 13, fontWeight: 600, color: P.ink }}>Quero me identificar</div>
-              <div style={{ fontFamily: FONTS.body, fontSize: 11, color: P.inkMuted, marginTop: 2 }}>Opcional — assim a gente sabe que foi você</div>
+        {gift.outOfStock ? (
+          <>
+            <div style={{
+              marginTop: 18,
+              padding: "14px 16px",
+              borderRadius: 14,
+              background: "rgba(42,37,32,0.05)",
+              border: `1px solid ${P.line}`,
+            }}>
+              <div style={{ fontFamily: FONTS.body, fontSize: 13, fontWeight: 600, color: P.inkSoft, marginBottom: 4 }}>
+                Este presente está esgotado
+              </div>
+              <div style={{ fontFamily: FONTS.body, fontSize: 12, color: P.inkMuted, lineHeight: 1.5 }}>
+                Não é possível prosseguir com a compra no momento.
+              </div>
             </div>
-            <div
-              onClick={() => setIdentify(!identify)}
-              style={{
-                width: 42, height: 24, borderRadius: 999,
-                background: identify ? P.accent : P.line,
-                position: "relative", cursor: "pointer", transition: "background 0.2s",
-                flexShrink: 0,
-              }}
+            <div style={{ flex: 1 }} />
+            <div style={{
+              marginTop: 16,
+              padding: "16px",
+              borderRadius: 14,
+              background: P.line,
+              color: P.inkMuted,
+              fontFamily: FONTS.body,
+              fontSize: 15,
+              fontWeight: 600,
+              textAlign: "center",
+              cursor: "not-allowed",
+              userSelect: "none",
+            }}>
+              Esgotado
+            </div>
+          </>
+        ) : (
+          <>
+            {/* identify toggle */}
+            <div style={{ marginTop: 18, padding: "14px 16px", borderRadius: 14, background: P.surface, border: `1px solid ${P.line}` }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <div>
+                  <div style={{ fontFamily: FONTS.body, fontSize: 13, fontWeight: 600, color: P.ink }}>Quero me identificar</div>
+                  <div style={{ fontFamily: FONTS.body, fontSize: 11, color: P.inkMuted, marginTop: 2 }}>Opcional — assim a gente sabe que foi você</div>
+                </div>
+                <div
+                  onClick={() => setIdentify(!identify)}
+                  style={{
+                    width: 42, height: 24, borderRadius: 999,
+                    background: identify ? P.accent : P.line,
+                    position: "relative", cursor: "pointer", transition: "background 0.2s",
+                    flexShrink: 0,
+                  }}
+                >
+                  <div style={{
+                    position: "absolute", top: 2,
+                    left: identify ? "unset" : 2,
+                    right: identify ? 2 : "unset",
+                    width: 20, height: 20, borderRadius: 999, background: "#fff",
+                    transition: "left 0.2s, right 0.2s",
+                  }} />
+                </div>
+              </div>
+              {identify && (
+                <div style={{ marginTop: 12, display: "flex", flexDirection: "column", gap: 8 }}>
+                  <input
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Seu nome"
+                    style={{
+                      padding: "10px 12px", borderRadius: 10, background: "#fff",
+                      border: `1px solid ${P.line}`, fontFamily: FONTS.body, fontSize: 13, color: P.ink,
+                      outline: "none", width: "100%", boxSizing: "border-box",
+                    }}
+                  />
+                  <textarea
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    placeholder="Deixe uma mensagem (opcional)"
+                    style={{
+                      padding: "10px 12px", borderRadius: 10, background: "#fff",
+                      border: `1px solid ${P.line}`, fontFamily: FONTS.body, fontSize: 13, color: P.inkSoft,
+                      minHeight: 56, resize: "none", outline: "none", width: "100%", boxSizing: "border-box",
+                    }}
+                  />
+                </div>
+              )}
+            </div>
+
+            <div style={{ flex: 1 }} />
+            <ButtonPrimary
+              style={{ marginTop: 16, opacity: saving ? 0.6 : 1 }}
+              onClick={handlePresentear}
             >
-              <div style={{
-                position: "absolute", top: 2,
-                left: identify ? "unset" : 2,
-                right: identify ? 2 : "unset",
-                width: 20, height: 20, borderRadius: 999, background: "#fff",
-                transition: "left 0.2s, right 0.2s",
-              }} />
-            </div>
-          </div>
-          {identify && (
-            <div style={{ marginTop: 12, display: "flex", flexDirection: "column", gap: 8 }}>
-              <input
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Seu nome"
-                style={{
-                  padding: "10px 12px", borderRadius: 10, background: "#fff",
-                  border: `1px solid ${P.line}`, fontFamily: FONTS.body, fontSize: 13, color: P.ink,
-                  outline: "none", width: "100%", boxSizing: "border-box",
-                }}
-              />
-              <textarea
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                placeholder="Deixe uma mensagem (opcional)"
-                style={{
-                  padding: "10px 12px", borderRadius: 10, background: "#fff",
-                  border: `1px solid ${P.line}`, fontFamily: FONTS.body, fontSize: 13, color: P.inkSoft,
-                  minHeight: 56, resize: "none", outline: "none", width: "100%", boxSizing: "border-box",
-                }}
-              />
-            </div>
-          )}
-        </div>
-
-        <div style={{ flex: 1 }} />
-        <ButtonPrimary
-          style={{ marginTop: 16, opacity: saving ? 0.6 : 1 }}
-          onClick={handlePresentear}
-        >
-          {saving ? <SpinnerInline /> : `Presentear · R$ ${gift.price}`}
-        </ButtonPrimary>
+              {saving ? <SpinnerInline /> : `Presentear · R$ ${gift.price}`}
+            </ButtonPrimary>
+          </>
+        )}
       </div>
     </div>
   );
