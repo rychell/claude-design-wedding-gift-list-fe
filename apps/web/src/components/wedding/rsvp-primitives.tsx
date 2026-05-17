@@ -12,13 +12,16 @@ export function Stepper({
   value,
   onChange,
   min = 1,
+  max,
   label,
 }: {
   value: number;
   onChange: (v: number) => void;
   min?: number;
+  max?: number;
   label?: string;
 }) {
+  const atMax = max !== undefined && value >= max;
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 8, alignItems: "center" }}>
       {label && (
@@ -49,13 +52,17 @@ export function Stepper({
           {value}
         </div>
         <button
-          onClick={() => onChange(value + 1)}
+          onClick={() => !atMax && onChange(value + 1)}
+          disabled={atMax}
           style={{
             width: 44, height: 44, borderRadius: 999,
-            border: "none", background: P.accent,
-            color: "#fff", fontSize: 22, fontWeight: 300,
-            cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
-            boxShadow: "0 4px 12px -4px rgba(184,153,104,0.5)",
+            border: atMax ? `1px solid ${P.line}` : "none",
+            background: atMax ? "transparent" : P.accent,
+            color: atMax ? P.inkMuted : "#fff",
+            fontSize: 22, fontWeight: 300,
+            cursor: atMax ? "not-allowed" : "pointer",
+            display: "flex", alignItems: "center", justifyContent: "center",
+            boxShadow: atMax ? "none" : "0 4px 12px -4px rgba(184,153,104,0.5)",
             WebkitTapHighlightColor: "transparent",
           }}
         >

@@ -22,12 +22,16 @@ export async function PUT(
     return NextResponse.json({ error: "convidadosConfirmados inválido" }, { status: 400 });
   }
 
+  const existing = await db.select().from(convidados).where(eq(convidados.id, id)).limit(1);
+  if (!existing[0]) return NextResponse.json({ error: "Convidado não encontrado" }, { status: 404 });
+  if (n > existing[0].convidados) {
+    return NextResponse.json({ error: "Número excede o limite do convite" }, { status: 400 });
+  }
+
   const now = new Date().toISOString();
   await db.update(convidados)
     .set({ convidadosConfirmados: n, ultimaAtualizacao: now })
     .where(eq(convidados.id, id));
 
-  const updated = await db.select().from(convidados).where(eq(convidados.id, id)).limit(1);
-  if (!updated[0]) return NextResponse.json({ error: "Convidado não encontrado" }, { status: 404 });
-  return NextResponse.json(rowToGuest(updated[0]));
+  return NextResponse.json(rowToGuest({ ...existing[0], convidadosConfirmados: n, ultimaAtualizacao: now }));
 }
